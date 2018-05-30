@@ -1,0 +1,5 @@
+package Dictionary;
+
+public enum Pos {
+    ADJECTIVE, NOUN, VERB, ADVERB, CONJUNCTION, INTERJECTION, PREPOSITION, PRONOUN
+}
