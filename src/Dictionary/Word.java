@@ -74,6 +74,14 @@ public class Word implements Serializable{
         return lowercase.startsWith("dolar") || lowercase.startsWith("sterlin") || lowercase.startsWith("paunt") || lowercase.startsWith("ons") || lowercase.startsWith("ruble") || lowercase.startsWith("mark") || lowercase.startsWith("frank") || lowercase.equals("yen") || lowercase.startsWith("sent") || lowercase.startsWith("yen'") || lowercase.contains("$");
     }
 
+    public boolean isPunctuation(){
+        if (name.equals(",") || name.equals(".") || name.equals("!") || name.equals("?") || name.equals(":")
+                || name.equals(";") || name.equals("\"") || name.equals("''") || name.equals("'") || name.equals("`")
+                || name.equals("``") || name.equals("...") || name.equals("-") || name.equals("--"))
+            return true;
+        return false;
+    }
+
     public static boolean isTime(String surfaceForm){
         String lowercase = surfaceForm.toLowerCase(new Locale("tr"));
         if (lowercase.matches("(\\d\\d|\\d):(\\d\\d|\\d):(\\d\\d|\\d)") || lowercase.matches("(\\d\\d|\\d):(\\d\\d|\\d)")){
