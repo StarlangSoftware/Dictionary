@@ -53,3 +53,5 @@ nb-configuration.xml
 release.properties
 pom.xml.releaseBackup
 pom.xml.tag
+out/artifacts/Dictionary_jar/Dictionary.jar
+out/production/Dictionary/libs/Math.jar
