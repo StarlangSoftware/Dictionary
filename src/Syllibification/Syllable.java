@@ -3,11 +3,21 @@ package Syllibification;
 public class Syllable {
     private String syllable;
 
-    public Syllable(String syllable){
+    /**
+     * A constructor of {@link Syllable} class which takes a String as an input and initializes syllable variable with given input.
+     *
+     * @param syllable String input.
+     */
+    public Syllable(String syllable) {
         this.syllable = syllable;
     }
 
-    public String getText(){
+    /**
+     * Getter for the syllable variable.
+     *
+     * @return the syllable variable.
+     */
+    public String getText() {
         return syllable;
     }
 }

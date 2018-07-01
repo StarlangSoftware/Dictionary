@@ -1,5 +1,39 @@
 package Dictionary;
 
+/**
+ * Parts of speech.
+ */
 public enum Pos {
-    ADJECTIVE, NOUN, VERB, ADVERB, CONJUNCTION, INTERJECTION, PREPOSITION, PRONOUN
+    /**
+     * Adjective.
+     */
+    ADJECTIVE,
+    /**
+     * Noun.
+     */
+    NOUN,
+    /**
+     * Verb.
+     */
+    VERB,
+    /**
+     * Adverb.
+     */
+    ADVERB,
+    /**
+     * Conjunction.
+     */
+    CONJUNCTION,
+    /**
+     * Interjection.
+     */
+    INTERJECTION,
+    /**
+     * Preposition.
+     */
+    PREPOSITION,
+    /**
+     * Pronoun.
+     */
+    PRONOUN
 }
