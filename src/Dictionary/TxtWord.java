@@ -14,7 +14,7 @@ public class TxtWord extends Word {
      */
     public TxtWord(String name) {
         super(name);
-        flags = new ArrayList<String>();
+        flags = new ArrayList<>();
     }
 
     /**
@@ -26,7 +26,7 @@ public class TxtWord extends Word {
      */
     public TxtWord(String name, String flag) {
         super(name);
-        flags = new ArrayList<String>();
+        flags = new ArrayList<>();
         addFlag(flag);
     }
 
@@ -549,7 +549,7 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The takesSuffixIRAsAorist method returns true if flags {@link ArrayList} contains F_GIR.
+     * The takesSuffixIRAsAorist method returns true if flags {@link ArrayList} does not contain F_GIR.
      *
      * @return true if flags {@link ArrayList} contains F_GIR.
      */
@@ -558,7 +558,7 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The takesSuffixDIRAsFactitive method returns true if flags {@link ArrayList} contains F_DIR.
+     * The takesSuffixDIRAsFactitive method returns true if flags {@link ArrayList} does not contain F_DIR.
      *
      * @return true if flags {@link ArrayList} contains F_DIR.
      */
