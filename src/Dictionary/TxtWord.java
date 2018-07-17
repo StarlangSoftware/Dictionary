@@ -133,8 +133,8 @@ public class TxtWord extends Word {
 
     /**
      * The samePos method takes {@link TxtWord} as input and returns true if;
-     * flags {@link ArrayList} contains CL_ISIM or CL_BOTH or given word is CL_ISIM or CL_BOTH or
-     * flags {@link ArrayList} contains CL_FIIL or CL_BOTH or given word is CL_FIIL or CL_BOTH or
+     * flags {@link ArrayList} contains CL_ISIM or given word is CL_ISIM or
+     * flags {@link ArrayList} contains CL_FIIL or given word is CL_FIIL or
      * flags {@link ArrayList} contains IS_ADJ or given word is IS_ADJ or
      * flags {@link ArrayList} contains IS_ZM or given word is IS_ZM or
      * flags {@link ArrayList} contains IS_ADVERB or given word is IS_ADVERB, false otherwise.
@@ -162,12 +162,12 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The isNominal method returns true if flags {@link ArrayList} contains CL_ISIM or CL_BOTH.
+     * The isNominal method returns true if flags {@link ArrayList} contains CL_ISIM.
      *
-     * @return true if flags {@link ArrayList} contains CL_ISIM or CL_BOTH.
+     * @return true if flags {@link ArrayList} contains CL_ISIM.
      */
     public boolean isNominal() {
-        return flags.contains("CL_ISIM") || flags.contains("CL_BOTH");
+        return flags.contains("CL_ISIM");
     }
 
     /**
@@ -252,12 +252,12 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The isVerb method returns true if flags {@link ArrayList} contains CL_FIIL or CL_BOTH.
+     * The isVerb method returns true if flags {@link ArrayList} contains CL_FIIL.
      *
-     * @return true if flags {@link ArrayList} contains CL_FIIL or CL_BOTH.
+     * @return true if flags {@link ArrayList} contains CL_FIIL.
      */
     public boolean isVerb() {
-        return flags.contains("CL_FIIL") || flags.contains("CL_BOTH");
+        return flags.contains("CL_FIIL");
     }
 
     /**
