@@ -54,6 +54,15 @@ public class TxtWord extends Word {
     }
 
     /**
+     * The removeFlag method takes a String flag as an input and removes given flag from the flags {@link ArrayList}.
+     *
+     * @param flag String input to remove.
+     */
+    public void removeFlag(String flag) {
+        flags.remove(flag);
+    }
+
+    /**
      * The verbType method checks flags {@link ArrayList} and returns the corresponding cases.
      *
      * @return the corresponding cases.
@@ -432,12 +441,30 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The rootSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, F_SD, IS_B_SD or IS_SDD.
+     * The obeysAndNotObeysVowelHarmonyDuringAgglutination method returns true if flags {@link ArrayList} contains IS_UUU.
      *
-     * @return true if flags {@link ArrayList} contains IS_SD, F_SD, IS_B_SD or IS_SDD.
+     * @return true if flags {@link ArrayList} contains IS_UUU.
+     */
+    public boolean obeysAndNotObeysVowelHarmonyDuringAgglutination() {
+        return flags.contains("IS_UUU");
+    }
+
+    /**
+     * The rootSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, F_SD, IS_B_SD.
+     *
+     * @return true if flags {@link ArrayList} contains IS_SD, F_SD, IS_B_SD.
      */
     public boolean rootSoftenDuringSuffixation() {
-        return flags.contains("IS_SD") || flags.contains("F_SD") || flags.contains("IS_B_SD") || flags.contains("IS_SDD");
+        return flags.contains("IS_SD") || flags.contains("F_SD") || flags.contains("IS_B_SD");
+    }
+
+    /**
+     * The rootSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SDD.
+     *
+     * @return true if flags {@link ArrayList} contains IS_SDD.
+     */
+    public boolean rootSoftenAndNotSoftenDuringSuffixation() {
+        return flags.contains("IS_SDD");
     }
 
     /**
@@ -450,12 +477,12 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The nounSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, IS_B_SD or IS_SDD.
+     * The nounSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, IS_B_SD.
      *
-     * @return true if flags {@link ArrayList} contains IS_SD, IS_B_SD or IS_SDD.
+     * @return true if flags {@link ArrayList} contains IS_SD, IS_B_SD.
      */
     public boolean nounSoftenDuringSuffixation() {
-        return flags.contains("IS_SD") || flags.contains("IS_B_SD") || flags.contains("IS_SDD");
+        return flags.contains("IS_SD") || flags.contains("IS_B_SD");
     }
 
     /**
@@ -477,21 +504,30 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The duplicatesDuringSuffixation method returns true if flags {@link ArrayList} contains IS_ST or IS_STT.
+     * The duplicatesDuringSuffixation method returns true if flags {@link ArrayList} contains IS_ST.
      *
-     * @return true if flags {@link ArrayList} contains IS_ST, IS_STT.
+     * @return true if flags {@link ArrayList} contains IS_ST.
      */
     public boolean duplicatesDuringSuffixation() {
-        return flags.contains("IS_ST") && !flags.contains("IS_STT");
+        return flags.contains("IS_ST");
     }
 
     /**
-     * The lastIdropsDuringSuffixation method returns true if flags {@link ArrayList} contains IS_UD or IS_UDD.
+     * The lastIdropsDuringSuffixation method returns true if flags {@link ArrayList} contains IS_UD.
      *
-     * @return true if flags {@link ArrayList} contains IS_ST, IS_STT.
+     * @return true if flags {@link ArrayList} contains IS_UD.
      */
     public boolean lastIdropsDuringSuffixation() {
-        return flags.contains("IS_UD") || flags.contains("IS_UDD");
+        return flags.contains("IS_UD");
+    }
+
+    /**
+     * The lastIDropsAndNotDropDuringSuffixation method returns true if flags {@link ArrayList} contains IS_UDD.
+     *
+     * @return true if flags {@link ArrayList} contains IS_UDD.
+     */
+    public boolean lastIDropsAndNotDropDuringSuffixation() {
+        return flags.contains("IS_UDD");
     }
 
     /**
