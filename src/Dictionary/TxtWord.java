@@ -470,6 +470,19 @@ public class TxtWord extends Word {
     }
 
     /**
+     * The isPortmanteauFacedSoftening method returns true if flags {@link ArrayList} contains IS_B_UD.
+     *
+     * @return true if flags {@link ArrayList} contains IS_B_SD.
+     */
+    public boolean isPortmanteauFacedSoftening() {
+        /**
+         *IS_B_SD: The bare-form of the word includes softening,
+         *therefore the last inserted vowel drops during suffixation. e.g. Çançiçeği
+         */
+        return flags.contains("IS_B_SD");
+    }
+
+    /**
      * The isSuffix method returns true if flags {@link ArrayList} contains EK.
      *
      * @return true if flags {@link ArrayList} contains EK.
@@ -597,7 +610,7 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The rootSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, F_SD, IS_B_SD or IS_SDD.
+     * The obeysAndNotObeysVowelHarmonyDuringAgglutination method returns true if flags {@link ArrayList} contain IS_UUU.
      *
      * @return true if flags {@link ArrayList} contains IS_UUU.
      */
@@ -609,15 +622,15 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The rootSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, F_SD, IS_B_SD.
+     * The rootSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, F_SD.
      *
-     * @return true if flags {@link ArrayList} contains IS_SD, F_SD, IS_B_SD.
+     * @return true if flags {@link ArrayList} contains IS_SD, F_SD.
      */
     public boolean rootSoftenDuringSuffixation() {
         /**
          *IS_SD: The bare-form final consonant gets devoiced during vowel-initial suffixation. e.g. Çakmak
          */
-        return flags.contains("IS_SD") || flags.contains("F_SD") || flags.contains("IS_B_SD");
+        return flags.contains("IS_SD") || flags.contains("F_SD");
     }
 
     /**
@@ -645,15 +658,15 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The nounSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, IS_B_SD or IS_SDD.
+     * The nounSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD.
      *
-     * @return true if flags {@link ArrayList} contains IS_SD, IS_B_SD or IS_SDD.
+     * @return true if flags {@link ArrayList} contains IS_SD.
      */
     public boolean nounSoftenDuringSuffixation() {
         /**
-         *IS_B_SD: The bare-form final consonant already has an accusative suffix. e.g. Çançiçeği
+         *IS_SD: The bare-form final consonant already has an accusative suffix. e.g. Kabağı
          */
-        return flags.contains("IS_SD") || flags.contains("IS_B_SD");
+        return flags.contains("IS_SD");
     }
 
     /**
