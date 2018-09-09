@@ -707,6 +707,18 @@ public class TxtWord extends Word {
     }
 
     /**
+     * The duplicatesAndNotDuplicatesDuringSuffixation method returns true if flags {@link ArrayList} contains IS_STT.
+     *
+     * @return true if flags {@link ArrayList} contains IS_STT.
+     */
+    public boolean duplicatesAndNotDuplicatesDuringSuffixation() {
+        /**
+         *IS_STT: The second consonant of the bare-form undergoes a resyllabification. e.g. His
+         */
+        return flags.contains("IS_STT");
+    }
+
+    /**
      * The lastIdropsDuringSuffixation method returns true if flags {@link ArrayList} contains IS_UD.
      *
      * @return true if flags {@link ArrayList} contains IS_UD.
