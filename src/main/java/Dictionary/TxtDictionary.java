@@ -16,6 +16,14 @@ public class TxtDictionary extends Dictionary {
         super(comparator);
     }
 
+    public TxtDictionary(){
+        super(new TurkishWordComparator());
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("turkish_dictionary.txt").getFile());
+        this.filename = file.getName();
+        loadFromText(classLoader.getResourceAsStream("turkish_dictionary.txt"));
+    }
+
     /**
      * Another constructor of {@link TxtDictionary} class which takes a String filename and a {@link WordComparator} as inputs.
      * And calls its super class {@link Dictionary} with given {@link WordComparator}, assigns given filename input to the
@@ -27,7 +35,11 @@ public class TxtDictionary extends Dictionary {
     public TxtDictionary(String filename, WordComparator comparator) {
         super(comparator);
         this.filename = filename;
-        loadFromText(filename);
+        try {
+            loadFromText(new FileInputStream(filename));
+        } catch (FileNotFoundException e) {
+            System.out.println("File " + filename + " not found");
+        }
     }
 
     /**
@@ -196,15 +208,15 @@ public class TxtDictionary extends Dictionary {
      * and assigns each word to the String array. Then, adds these word with their flags tot he words {@link java.util.ArrayList}.
      * At the end it sorts the words {@link java.util.ArrayList}.
      *
-     * @param filename String input.
+     * @param fileInputStream File stream input.
      */
-    private void loadFromText(String filename) {
+    private void loadFromText(InputStream fileInputStream) {
         int i;
         String line;
         String[] list;
         TxtWord currentWord;
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF8"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream, "UTF8"));
             line = br.readLine();
             while (line != null) {
                 list = line.split(" ");
@@ -217,10 +229,6 @@ public class TxtDictionary extends Dictionary {
                 }
                 line = br.readLine();
             }
-        } catch (FileNotFoundException fileNotFoundException) {
-            System.out.println("File " + filename + " not found");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

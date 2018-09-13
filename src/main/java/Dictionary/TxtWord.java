@@ -14,7 +14,7 @@ public class TxtWord extends Word {
      */
     public TxtWord(String name) {
         super(name);
-        flags = new ArrayList<>();
+        flags = new ArrayList<String>();
     }
 
     /**
@@ -26,7 +26,7 @@ public class TxtWord extends Word {
      */
     public TxtWord(String name, String flag) {
         super(name);
-        flags = new ArrayList<>();
+        flags = new ArrayList<String>();
         addFlag(flag);
     }
 
@@ -470,6 +470,19 @@ public class TxtWord extends Word {
     }
 
     /**
+     * The isPortmanteauFacedSoftening method returns true if flags {@link ArrayList} contains IS_B_UD.
+     *
+     * @return true if flags {@link ArrayList} contains IS_B_SD.
+     */
+    public boolean isPortmanteauFacedSoftening() {
+        /**
+         *IS_B_SD: The bare-form of the word includes softening,
+         *therefore the last inserted vowel drops during suffixation. e.g. Çançiçeği
+         */
+        return flags.contains("IS_B_SD");
+    }
+
+    /**
      * The isSuffix method returns true if flags {@link ArrayList} contains EK.
      *
      * @return true if flags {@link ArrayList} contains EK.
@@ -597,7 +610,7 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The obeysAndNotObeysVowelHarmonyDuringAgglutination method returns true if flags {@link ArrayList} contains IS_UUU.
+     * The obeysAndNotObeysVowelHarmonyDuringAgglutination method returns true if flags {@link ArrayList} contain IS_UUU.
      *
      * @return true if flags {@link ArrayList} contains IS_UUU.
      */
@@ -609,15 +622,15 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The rootSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, F_SD, IS_B_SD.
+     * The rootSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, F_SD.
      *
-     * @return true if flags {@link ArrayList} contains IS_SD, F_SD, IS_B_SD.
+     * @return true if flags {@link ArrayList} contains IS_SD, F_SD.
      */
     public boolean rootSoftenDuringSuffixation() {
         /**
          *IS_SD: The bare-form final consonant gets devoiced during vowel-initial suffixation. e.g. Çakmak
          */
-        return flags.contains("IS_SD") || flags.contains("F_SD") || flags.contains("IS_B_SD");
+        return flags.contains("IS_SD") || flags.contains("F_SD");
     }
 
     /**
@@ -645,15 +658,15 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The nounSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, IS_B_SD.
+     * The nounSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD.
      *
-     * @return true if flags {@link ArrayList} contains IS_SD, IS_B_SD.
+     * @return true if flags {@link ArrayList} contains IS_SD.
      */
     public boolean nounSoftenDuringSuffixation() {
         /**
-         *IS_B_SD: The bare-form final consonant already has an accusative suffix. e.g. Çançiçeği
+         *IS_SD: The bare-form final consonant already has an accusative suffix. e.g. Kabağı
          */
-        return flags.contains("IS_SD") || flags.contains("IS_B_SD");
+        return flags.contains("IS_SD");
     }
 
     /**
@@ -691,6 +704,18 @@ public class TxtWord extends Word {
          *IS_ST: The second consonant of the bare-form undergoes a resyllabification. e.g. His
          */
         return flags.contains("IS_ST");
+    }
+
+    /**
+     * The duplicatesAndNotDuplicatesDuringSuffixation method returns true if flags {@link ArrayList} contains IS_STT.
+     *
+     * @return true if flags {@link ArrayList} contains IS_STT.
+     */
+    public boolean duplicatesAndNotDuplicatesDuringSuffixation() {
+        /**
+         *IS_STT: The second consonant of the bare-form undergoes a resyllabification. e.g. His
+         */
+        return flags.contains("IS_STT");
     }
 
     /**
@@ -791,7 +816,7 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The takesSuffixIRAsAorist method returns true if flags {@link ArrayList} does not contain F_GIR.
+     * The takesSuffixIRAsAorist method returns true if flags {@link ArrayList} contains F_GIR.
      *
      * @return true if flags {@link ArrayList} contains F_GIR.
      */
@@ -803,7 +828,7 @@ public class TxtWord extends Word {
     }
 
     /**
-     * The takesSuffixDIRAsFactitive method returns true if flags {@link ArrayList} does not contain F_DIR.
+     * The takesSuffixDIRAsFactitive method returns true if flags {@link ArrayList} contains F_DIR.
      *
      * @return true if flags {@link ArrayList} contains F_DIR.
      */
