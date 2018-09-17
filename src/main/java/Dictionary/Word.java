@@ -144,7 +144,7 @@ public class Word implements Serializable {
      */
     public static boolean isOrganization(String surfaceForm) {
         String lowercase = surfaceForm.toLowerCase(new Locale("tr"));
-        return lowercase.startsWith("şirket") || lowercase.equals("corp") || lowercase.equals("inc.") || lowercase.equals("co.");
+        return lowercase.equals("corp") || lowercase.equals("inc.") || lowercase.equals("co.");
     }
 
     /**
@@ -156,7 +156,7 @@ public class Word implements Serializable {
      */
     public static boolean isMoney(String surfaceForm) {
         String lowercase = surfaceForm.toLowerCase(new Locale("tr"));
-        return lowercase.startsWith("dolar") || lowercase.startsWith("sterlin") || lowercase.startsWith("paunt") || lowercase.startsWith("ons") || lowercase.startsWith("ruble") || lowercase.startsWith("mark") || lowercase.startsWith("frank") || lowercase.equals("yen") || lowercase.startsWith("sent") || lowercase.startsWith("yen'") || lowercase.contains("$");
+        return lowercase.startsWith("dolar") || lowercase.startsWith("sterlin") || lowercase.startsWith("paunt") || lowercase.startsWith("ons") || lowercase.startsWith("ruble") || lowercase.startsWith("mark") || lowercase.startsWith("frank") || lowercase.equals("yen") || lowercase.startsWith("sent") || lowercase.startsWith("cent") || lowercase.startsWith("yen'") || lowercase.contains("$");
     }
 
     /**
