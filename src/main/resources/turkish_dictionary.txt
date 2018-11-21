@@ -392,7 +392,6 @@ aciz IS_UD IS_ADJ
 âciz IS_UD IS_ADJ
 acizane CL_ISIM
 âcizane CL_ISIM
-acizleri IS_ZM
 acı CL_FIIL CL_ISIM IS_ADJ F4PW-NO-REF IS_EX
 açı CL_ISIM
 acıağaç IS_SD CL_ISIM
@@ -6352,7 +6351,6 @@ bazik CL_ISIM
 bazilika CL_ISIM
 bazit CL_ISIM
 bazı IS_ZM IS_ADJ IS_DET
-bazısı IS_ZM
 bazlama CL_ISIM
 bazlamaç IS_SD CL_ISIM
 bazofil CL_ISIM
@@ -11478,7 +11476,6 @@ cokey CL_ISIM
 çokkocalılık CL_ISIM IS_SD
 çökkün CL_ISIM
 çokla CL_FIIL F4PW
-çokları IS_ZM
 çoklarınca IS_ADVERB
 çoklu IS_ADJ
 çokluk CL_ISIM
@@ -22494,7 +22491,7 @@ herifçioğlu IS_BILEŞ IS_B_UD CL_ISIM
 herik CL_ISIM IS_SD
 herk CL_ISIM
 herke CL_ISIM
-herkes CL_ISIM
+herkes CL_ISIM IS_ZM
 hermes IS_OA
 hermetik IS_ADJ IS_SD
 hersek IS_OA
@@ -26422,7 +26419,6 @@ kafeslet CL_FIIL
 kafeterya CL_ISIM
 kaffe IS_ADJ
 kâffe IS_ADJ
-kaffesi IS_ZM
 kâffesi PROCL_ISIM
 kâfi IS_ADJ
 kafi IS_ADJ IS_OA
@@ -28591,7 +28587,6 @@ kende IS_OA
 kendi IS_ZM
 kendibeslek IS_SD CL_ISIM
 kendigelen IS_ADJ
-kendileri IS_ZM
 kendiliğinden IS_ADVERB
 kendiliğindenlik IS_SD CL_ISIM
 kendilik CL_ISIM IS_SD
@@ -29019,7 +29014,6 @@ kimber IS_OA
 kimberly IS_OA
 kimbrough IS_OA
 kimek IS_OA
-kimesne IS_ZM
 kimi IS_ZM IS_DET
 kimileyin IS_ADVERB
 kimisi IS_ZM
@@ -29027,7 +29021,6 @@ kimlik CL_ISIM IS_SD
 kimono CL_ISIM
 kimora IS_OA
 kimse CL_ISIM IS_ZM
-kimsecik IS_ZM
 kimsesiz IS_ADJ CL_ISIM
 kimsesizlik CL_ISIM IS_SD
 kimüs CL_ISIM
@@ -39518,7 +39511,7 @@ otçu CL_ISIM
 otçul CL_ISIM
 öte IS_KI IS_POSTP CL_ISIM
 öteberi CL_ISIM
-öteki IS_ADJ
+öteki IS_ADJ IS_ZM
 ötekileri IS_ZM
 ötekisi IS_ZM
 otel CL_ISIM
@@ -46816,10 +46809,8 @@ siyonist IS_OA
 siyonizm IS_OA
 siyret IS_OA
 siz IS_ZM
-sizde IS_ZM
 sizden IS_ADJ
 size IS_ADVERB
-sizinki IS_ZM
 şizofren IS_ADJ CL_ISIM
 şizofreni CL_ISIM
 şizofrenik IS_ADJ
