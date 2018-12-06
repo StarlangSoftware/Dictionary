@@ -118,6 +118,36 @@ public class TxtDictionary extends Dictionary {
     }
 
     /**
+     * The addAdjective method takes a String name and calls addWithFlag method with given name and IS_ADJ flag.
+     *
+     * @param name String input.
+     * @return true if given name is in words {@link java.util.ArrayList}, false otherwise.
+     */
+    public boolean addAdjective(String name) {
+        return addWithFlag(name, "IS_ADJ");
+    }
+
+    /**
+     * The addAdverb method takes a String name and calls addWithFlag method with given name and IS_ADVERB flag.
+     *
+     * @param name String input.
+     * @return true if given name is in words {@link java.util.ArrayList}, false otherwise.
+     */
+    public boolean addAdverb(String name) {
+        return addWithFlag(name, "IS_ADVERB");
+    }
+
+    /**
+     * The addPronoun method takes a String name and calls addWithFlag method with given name and IS_ZM flag.
+     *
+     * @param name String input.
+     * @return true if given name is in words {@link java.util.ArrayList}, false otherwise.
+     */
+    public boolean addPronoun(String name) {
+        return addWithFlag(name, "IS_ZM");
+    }
+
+    /**
      * The addWithFlag method takes a String name and a flag as inputs. First it creates a {@link TxtWord} word, then if
      * given name is not in words {@link java.util.ArrayList} it creates new {@link TxtWord} with given name and assigns it to
      * the word and adds given flag to the word, it also add newly created word to the words {@link java.util.ArrayList}'s index
