@@ -848,4 +848,12 @@ public class TxtWord extends Word {
         return flags.contains("IS_SU");
     }
 
+    public String toString(){
+        StringBuilder result = new StringBuilder(super.toString());
+        for (String flag : flags){
+            result.append(" ").append(flag);
+        }
+        return result.toString();
+    }
+
 }
