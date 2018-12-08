@@ -170,7 +170,9 @@ public class TxtDictionary extends Dictionary {
             return true;
         } else {
             word = (TxtWord) getWord(name.toLowerCase(new Locale("tr")));
-            word.addFlag(flag);
+            if (!word.containsFlag(flag)){
+                word.addFlag(flag);
+            }
         }
         return false;
     }

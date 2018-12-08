@@ -848,6 +848,15 @@ public class TxtWord extends Word {
         return flags.contains("IS_SU");
     }
 
+    /**
+     * The containsFlag method returns true if flags {@link ArrayList} contains flag.
+     *
+     * @return true if flags {@link ArrayList} contains flag.
+     */
+    public boolean containsFlag(String flag){
+        return flags.contains(flag);
+    }
+
     public String toString(){
         StringBuilder result = new StringBuilder(super.toString());
         for (String flag : flags){
