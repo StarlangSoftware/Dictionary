@@ -160,17 +160,15 @@ public class Word implements Serializable {
     }
 
     /**
-     * Another isPunctuation method without any argument, it checks name variable whether it is a punctuation or not and
+     * The isPunctuation method without any argument, it checks name variable whether it is a punctuation or not and
      * returns true if so.
      *
      * @return true if name is a punctuation.
      */
     public boolean isPunctuation() {
-        if (name.equals(",") || name.equals(".") || name.equals("!") || name.equals("?") || name.equals(":")
+        return name.equals(",") || name.equals(".") || name.equals("!") || name.equals("?") || name.equals(":")
                 || name.equals(";") || name.equals("\"") || name.equals("''") || name.equals("'") || name.equals("`")
-                || name.equals("``") || name.equals("...") || name.equals("-") || name.equals("--"))
-            return true;
-        return false;
+                || name.equals("``") || name.equals("...") || name.equals("-") || name.equals("--");
     }
 
     /**
