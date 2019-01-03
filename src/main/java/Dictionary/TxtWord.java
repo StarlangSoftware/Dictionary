@@ -297,9 +297,9 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_KIS.
      */
     public boolean isAbbreviation() {
-        /**
-         *IS_KIS: The bare-form of the word is an abbrevation which does not obey
-         *vowel harmony while taking suffixes. Örn. Aihm
+        /*
+         IS_KIS: The bare-form of the word is an abbrevation which does not obey
+         vowel harmony while taking suffixes. Örn. Ab
          */
         return flags.contains("IS_KIS");
     }
@@ -310,7 +310,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_INTERJ.
      */
     public boolean isInterjection() {
-        /**
+        /*
          *IS_INTERJ: An interjection is a part of speech that shows the emotion or feeling. e.g. Ah, aferin
          */
         return flags.contains("IS_INTERJ");
@@ -322,7 +322,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_DUP.
      */
     public boolean isDuplicate() {
-        /**
+        /*
          *IS_DUP: The bare-form is part of a duplicate form. e.g. Abuk
          */
         return flags.contains("IS_DUP");
@@ -361,7 +361,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_ZM.
      */
     public boolean isPronoun() {
-        /**
+        /*
          *IS_ZM: The bare-form of the word is a pronoun. e.g. Hangi, hep, hiçbiri
          */
         return flags.contains("IS_ZM");
@@ -373,7 +373,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_QUES.
      */
     public boolean isQuestion() {
-        /**The bare-form of the word is a question. e.g. Mi, mu, mü
+        /*The bare-form of the word is a question. e.g. Mi, mu, mü
          */
         return flags.contains("IS_QUES");
     }
@@ -393,7 +393,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_BILEŞ.
      */
     public boolean isPortmanteau() {
-        /**
+        /*
          *IS_BILEŞ: The bare-form is a portmanteau word in affixed form. e.g. gelinçiçeği
          */
         return flags.contains("IS_BILEŞ");
@@ -405,7 +405,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_DET.
      */
     public boolean isDeterminer() {
-        /**
+        /*
          *IS_DET: The bare-form of the word is a determiner. e.g. Bazı, bir
          */
         return flags.contains("IS_DET");
@@ -417,7 +417,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_CONJ.
      */
     public boolean isConjunction() {
-        /**
+        /*
          *IS_CONJ: The bare-form of the word is a conjunction. e.g. Gerek, halbuki
          */
         return flags.contains("IS_CONJ");
@@ -438,7 +438,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_POSTP.
      */
     public boolean isPostP() {
-        /**
+        /*
          *The bare-form of the word is a postposition. e.g. Önce, takdirde, üzere
          */
         return flags.contains("IS_POSTP");
@@ -450,7 +450,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_B_SI.
      */
     public boolean isPortmanteauEndingWithSI() {
-        /**
+        /*
          *IS_B_SI: The bare-form is a portmanteau word ending with "sı". e.g. Giritlalesi
          */
         return flags.contains("IS_B_SI");
@@ -462,7 +462,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_B_UD.
      */
     public boolean isPortmanteauFacedVowelEllipsis() {
-        /**
+        /*
          *IS_B_UD: The bare-form of the word includes vowel epenthesis,
          *therefore the last inserted vowel drops during suffixation. e.g. İnsanoğlu
          */
@@ -475,9 +475,8 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_B_SD.
      */
     public boolean isPortmanteauFacedSoftening() {
-        /**
-         *IS_B_SD: The bare-form of the word includes softening,
-         *therefore the last inserted vowel drops during suffixation. e.g. Çançiçeği
+        /*
+         *IS_B_SD: The bare-form of the word includes softening. e.g. Çançiçeği
          */
         return flags.contains("IS_B_SD");
     }
@@ -488,7 +487,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains EK.
      */
     public boolean isSuffix() {
-        /**
+        /*
          * EK: This tag indicates complementary verbs. e.g. İdi, iken, imiş.
          */
         return flags.contains("EK");
@@ -500,7 +499,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_OA.
      */
     public boolean isProperNoun() {
-        /**
+        /*
          *IS_OA: The bare-form of the word is a proper noun. e.g. Abant, Beşiktaş
          */
         return flags.contains("IS_OA");
@@ -512,7 +511,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_CA.
      */
     public boolean isPlural() {
-        /**
+        /*
          *IS_CA: The bare-form of the word is already in a plural form,
          *therefore can not take plural suffixes such as "ler" or "lar". e.g. Buğdaygiller
          */
@@ -525,7 +524,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_SAYI.
      */
     public boolean isNumeral() {
-        /**
+        /*
          *IS_SAYI: The word is a number. e.g. Dört
          */
         return flags.contains("IS_SAYI");
@@ -591,7 +590,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_ORD.
      */
     public boolean isOrdinal() {
-        /**
+        /*
          *IS_ORD: The bare-form of the word can take suffixes and these suffixes define a ranking. e.g. Birinci
          */
         return flags.contains("IS_ORD");
@@ -603,7 +602,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_UU.
      */
     public boolean notObeysVowelHarmonyDuringAgglutination() {
-        /**
+        /*
          *IS_UU: The bare-form does not obey vowel harmony while taking suffixes. e.g. Dikkat
          */
         return flags.contains("IS_UU");
@@ -615,7 +614,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_UUU.
      */
     public boolean obeysAndNotObeysVowelHarmonyDuringAgglutination() {
-        /**
+        /*
          *IS_UUU: The bare-form does not obey vowel harmony while taking suffixes. e.g. Bol, kalp
          */
         return flags.contains("IS_UUU");
@@ -627,19 +626,19 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_SD, F_SD.
      */
     public boolean rootSoftenDuringSuffixation() {
-        /**
+        /*
          *IS_SD: The bare-form final consonant gets devoiced during vowel-initial suffixation. e.g. Çakmak
          */
         return flags.contains("IS_SD") || flags.contains("F_SD");
     }
 
     /**
-     * The rootSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SDD.
+     * The rootSoftenAndNotSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SDD.
      *
      * @return true if flags {@link ArrayList} contains IS_SDD.
      */
     public boolean rootSoftenAndNotSoftenDuringSuffixation() {
-        /**
+        /*
          *The bare-form final consonant can (or can not) get devoiced during vowel-initial suffixation. e.g. Kalp
          */
         return flags.contains("IS_SDD");
@@ -651,7 +650,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains F_SD.
      */
     public boolean verbSoftenDuringSuffixation() {
-        /**
+        /*
          * F_SD: The bare-form final consonant gets devoiced during vowel-initial suffixation. e.g. Cezbet
          */
         return flags.contains("F_SD");
@@ -663,7 +662,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_SD.
      */
     public boolean nounSoftenDuringSuffixation() {
-        /**
+        /*
          *IS_SD: The bare-form final consonant already has an accusative suffix. e.g. Kabağı
          */
         return flags.contains("IS_SD");
@@ -675,7 +674,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_KG.
      */
     public boolean endingKChangesIntoG() {
-        /**
+        /*
          *IS_KG: The bare-form includes vowel epenthesis, therefore the last inserted vowel drope
          *during suffixation. e.g. Çelenk
          */
@@ -688,7 +687,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_EX.
      */
     public boolean isExceptional() {
-        /**
+        /*
          *IS_EX: This tag defines exception words. e.g. Delikanlı
          */
         return flags.contains("IS_EX");
@@ -700,7 +699,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_ST.
      */
     public boolean duplicatesDuringSuffixation() {
-        /**
+        /*
          *IS_ST: The second consonant of the bare-form undergoes a resyllabification. e.g. His
          */
         return flags.contains("IS_ST");
@@ -712,7 +711,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_STT.
      */
     public boolean duplicatesAndNotDuplicatesDuringSuffixation() {
-        /**
+        /*
          *IS_STT: The second consonant of the bare-form undergoes a resyllabification. e.g. His
          */
         return flags.contains("IS_STT");
@@ -724,7 +723,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_UD.
      */
     public boolean lastIdropsDuringSuffixation() {
-        /**
+        /*
          *IS_UD: The bare-form includes vowel epenthesis, therefore the last inserted vowel drops during suffixation.
          *e.g. Boyun
          */
@@ -737,7 +736,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_UDD.
      */
     public boolean lastIDropsAndNotDropDuringSuffixation() {
-        /**
+        /*
          *The bare-form includes vowel epenthesis, therefore the last inserted vowel can (or can not) drop during suffixation. e.g. Kadir
          */
         return flags.contains("IS_UDD");
@@ -749,7 +748,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_KI.
      */
     public boolean takesRelativeSuffixKi() {
-        /**
+        /*
          *IS_KI: The word can take a suffix such as "ki". e.g. Önce
          */
         return flags.contains("IS_KI");
@@ -761,7 +760,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_KU.
      */
     public boolean takesRelativeSuffixKu() {
-        /**
+        /*
          *IS_KU: The word can take a suffix such as "kü". e.g. Bugün
          */
         return flags.contains("IS_KU");
@@ -782,7 +781,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains F_UD.
      */
     public boolean lastIdropsDuringPassiveSuffixation() {
-        /**
+        /*
          *F_UD: The bare-form includes vowel epenthesis, therefore the last "ı"
          *drops during passive suffixation. e.g. Çağır
          */
@@ -795,7 +794,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains F_GUD.
      */
     public boolean vowelAChangesToIDuringYSuffixation() {
-        /**
+        /*
          *F_GUD: The verb bare-form includes viwel reduction, the last vowel "a" of the bare-form is replaced with "ı"
          *e.g. Buzağıla
          */
@@ -808,7 +807,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains F_GUDO.
      */
     public boolean vowelEChangesToIDuringYSuffixation() {
-        /**
+        /*
          *F_GUDO: The verb bare-form includes viwel reduction, the last vowel "e" of the
          *bare-form is replaced with "i". e.g. Ye
          */
@@ -821,7 +820,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains F_GIR.
      */
     public boolean takesSuffixIRAsAorist() {
-        /**
+        /*
          *F_GIR: The bare-form of the word takes "ir" suffix. e.g. Geç
          */
         return !flags.contains("F_GIR");
@@ -833,7 +832,7 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains F_DIR.
      */
     public boolean takesSuffixDIRAsFactitive() {
-        /**
+        /*
          *F_DIR: The bare-form of the word takes "tır" suffix. e.g. Daral
          */
         return !flags.contains("F_DIR");
