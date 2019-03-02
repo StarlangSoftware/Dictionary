@@ -342,7 +342,7 @@ public class TxtDictionary extends Dictionary {
      *
      * @return the resulting Trie.
      */
-    private Trie prepareTrie() {
+    public Trie prepareTrie() {
         Trie result = new Trie();
         String root, rootWithoutLast, rootWithoutLastTwo;
         char last, lastBefore = ' ';
