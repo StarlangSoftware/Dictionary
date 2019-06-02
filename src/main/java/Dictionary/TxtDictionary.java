@@ -280,7 +280,7 @@ public class TxtDictionary extends Dictionary {
         try {
             outfile = new FileWriter(filename);
             for (i = 0; i < words.size(); i++) {
-                outfile.write(words.get(i) + "\n");
+                outfile.write(words.get(i).toString() + "\n");
             }
             outfile.close();
         } catch (IOException ioException) {
