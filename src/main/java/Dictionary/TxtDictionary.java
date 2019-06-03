@@ -275,10 +275,11 @@ public class TxtDictionary extends Dictionary {
      * @param filename String input.
      */
     public void saveAsTxt(String filename) {
-        FileWriter outfile;
+        BufferedWriter outfile;
         int i;
         try {
-            outfile = new FileWriter(filename);
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(filename), "UTF-8");
+            outfile = new BufferedWriter(writer);
             for (i = 0; i < words.size(); i++) {
                 outfile.write(words.get(i).toString() + "\n");
             }
