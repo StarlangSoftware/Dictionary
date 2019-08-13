@@ -77,7 +77,7 @@ Use below line to generate jar file:
 
 ------------------------------------------------
 
-WordNet
+Dictionary
 ============
 + [Maven Usage](#maven-usage)
 
