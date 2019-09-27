@@ -180,14 +180,14 @@ public class TxtDictionary extends Dictionary {
     }
 
     /**
-     * The mergeDictionary method takes a String inputs; secondFilename and mergedFilename. It reads given files line by
+     * The mergeDictionary method takes a String inputs; secondFileName and mergedFileName. It reads given files line by
      * line and splits them according to spaces and write each word to file whichever comes first lexicographically and
      * continue to read files till the end.
      *
-     * @param secondFilename String input.
-     * @param mergedFilename String input.
+     * @param secondFileName String input.
+     * @param mergedFileName String input.
      */
-    public void mergeDictionary(String secondFilename, String mergedFilename) {
+    public void mergeDictionary(String secondFileName, String mergedFileName) {
         FileReader first, second;
         FileWriter outfile;
         BufferedReader firstfile, secondfile;
@@ -196,9 +196,9 @@ public class TxtDictionary extends Dictionary {
         try {
             first = new FileReader(filename);
             firstfile = new BufferedReader(first);
-            second = new FileReader(secondFilename);
+            second = new FileReader(secondFileName);
             secondfile = new BufferedReader(second);
-            outfile = new FileWriter(mergedFilename);
+            outfile = new FileWriter(mergedFileName);
             st1 = firstfile.readLine();
             st2 = secondfile.readLine();
             while (st1 != null && st2 != null) {
@@ -223,11 +223,13 @@ public class TxtDictionary extends Dictionary {
                     }
                 }
             }
-            if (st1 == null && st2 != null) {
-                while (st2 != null) {
-                    outfile.write(st2 + "\n");
-                    st2 = secondfile.readLine();
-                }
+            while (st1 != null) {
+                outfile.write(st1 + "\n");
+                st1 = firstfile.readLine();
+            }
+            while (st2 != null) {
+                outfile.write(st2 + "\n");
+                st2 = secondfile.readLine();
             }
             outfile.close();
         } catch (FileNotFoundException fileNotFoundException) {
@@ -239,7 +241,7 @@ public class TxtDictionary extends Dictionary {
 
     /**
      * The loadFromText method takes a String filename as an input. It reads given file line by line and splits according to space
-     * and assigns each word to the String array. Then, adds these word with their flags tot he words {@link java.util.ArrayList}.
+     * and assigns each word to the String array. Then, adds these word with their flags to the words {@link java.util.ArrayList}.
      * At the end it sorts the words {@link java.util.ArrayList}.
      *
      * @param fileInputStream File stream input.
@@ -347,22 +349,24 @@ public class TxtDictionary extends Dictionary {
         Trie result = new Trie();
         String root, rootWithoutLast, rootWithoutLastTwo;
         char last, lastBefore = ' ';
+        int length;
         for (int i = 0; i < size(); i++) {
             TxtWord word = (TxtWord) getWord(i);
             root = word.getName();
+            length = root.length();
             if (root.equals("ben")) {
                 result.addWord("bana", word);
             }
-            rootWithoutLast = root.substring(0, root.length() - 1);
-            if (root.length() > 1) {
-                rootWithoutLastTwo = root.substring(0, root.length() - 2);
+            rootWithoutLast = root.substring(0, length - 1);
+            if (length > 1) {
+                rootWithoutLastTwo = root.substring(0, length - 2);
             } else {
                 rootWithoutLastTwo = "";
             }
-            if (root.length() > 1){
-                lastBefore = root.charAt(root.length() - 2);
+            if (length > 1){
+                lastBefore = root.charAt(length - 2);
             }
-            last = root.charAt(root.length() - 1);
+            last = root.charAt(length - 1);
             result.addWord(root, word);
             if (word.lastIdropsDuringSuffixation() || word.lastIdropsDuringPassiveSuffixation()) {
                 if (word.rootSoftenDuringSuffixation()) {

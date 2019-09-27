@@ -69,146 +69,146 @@ public class TxtWord extends Word {
      */
     public String verbType() {
         if (flags.contains("F1P1-NO-REF")) {
-            /**
-             *There is no example in the Turkish dictionary.
+            /*
+             There is no example in the Turkish dictionary.
              */
             return "F1P1-NO-REF";
         }
         if (flags.contains("F2P1-NO-REF")) {
-            /**
-             *F2P1-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
-             *can take CausativeT suffix. e.g. Doğ, göç, için
+            /*
+             F2P1-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
+             can take CausativeT suffix. e.g. Doğ, göç, için
              */
             return "F2P1-NO-REF";
         }
         if (flags.contains("F3P1-NO-REF")) {
-            /**
+            /*
              *F3P1-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take Passive Hl suffix,
              *can take CausativeT suffix. e.g. Ak
              */
             return "F3P1-NO-REF";
         }
         if (flags.contains("F4P1-NO-REF")) {
-            /**
+            /*
              *F4P1-NO-REF: The bare-form is a verb and depending on this attribute, the verb can't take PassiveHn suffix, can take CausativeT suffix.
              *e.g. Aksa
              */
             return "F4P1-NO-REF";
         }
         if (flags.contains("F4PR-NO-REF")) {
-            /**
+            /*
              *F4PR-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
              *can take CausativeT suffix. e.g. Çevir, göster
              */
             return "F4PR-NO-REF";
         }
         if (flags.contains("F4PL-NO-REF")) {
-            /**
+            /*
              *F4PL-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix,
              *can take CausativeT suffix. e.g. Azal, çoğal
              */
             return "F4PL-NO-REF";
         }
         if (flags.contains("F4PW-NO-REF")) {
-            /**
+            /*
              *F4PW-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveN suffix,
              *can take CausativeT suffix. e.g. Birle, boya
              */
             return "F4PW-NO-REF";
         }
         if (flags.contains("F5PL-NO-REF")) {
-            /**
+            /*
              *F5PL-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix,
              *can take CausativeDHr suffix. e.g. Çal, kal
              */
             return "F5PL-NO-REF";
         }
         if (flags.contains("F5PR-NO-REF")) {
-            /**
+            /*
              *F5PR-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
              *can take CausativeDHr suffix. e.g. Birleş, çöz
              */
             return "F5PR-NO-REF";
         }
         if (flags.contains("F5PW-NO-REF")) {
-            /**
+            /*
              *F5PW-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
              *can take CausativeDHr suffix. e.g. Ye
              */
             return "F5PW-NO-REF";
         }
         if (flags.contains("F1P1")) {
-            /**
+            /*
              *F1P1: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
              *can take CausativeAr suffix, can take ReciprocalHs suffix. e.g. Çık, kop
              */
             return "F1P1";
         }
         if (flags.contains("F2P1")) {
-            /**
+            /*
              *F2P1: The bare-form is a verb and depending on this attribute, the verb can can not PassiveHn suffix, can take CausativeHr suffix,
              *can take CausativeDHr suffix, can take ReciprocalHs suffix. e.g. Bit, doy, düş
              */
             return "F2P1";
         }
         if (flags.contains("F2PL")) {
-            /**
+            /*
              *F2PL: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take CausativeHr suffix,
              *can take CausativeDHr suffix, can take ReciprocalHs suffix. e.g. Art, çök
              */
             return "F2PL";
         }
         if (flags.contains("F3P1")) {
-            /**
+            /*
              *F3P1: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
              *can take CausativeHl suffix, can take ReciprocalHs suffix. e.g. Kok, sark
              */
             return "F3P1";
         }
         if (flags.contains("F4P1")) {
-            /**
+            /*
              *F4P1: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix,
              *can take CausativeT suffix, can take ReciprocalHs suffix. e.g. Anla
              */
             return "F4P1";
         }
         if (flags.contains("F4PR")) {
-            /**
+            /*
              *F4PR: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
              *can take CausativeT suffix, can take ReciprocalHs suffix. e.g. Bitir, çağır
              */
             return "F4PR";
         }
         if (flags.contains("F4PL")) {
-            /**
+            /*
              *F4PL: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveN suffix,
              *can take CausativeT suffix, can take ReciprocalHs suffix. e.g. Bolal, çömel
              */
             return "F4PL";
         }
         if (flags.contains("F4PW")) {
-            /**
+            /*
              *F4PW: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveN suffix,
              *can take CausativeT suffix, can take ReciprocalHs suffix. e.g. Boyla, çağla
              */
             return "F4PW";
         }
         if (flags.contains("F5P1")) {
-            /**
+            /*
              *F5P1: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
              *can take CausativeDHr suffix, can take ReciprocalHs suffix, can take ReflexiveHn suffix. e.g. Giy
              */
             return "F5P1";
         }
         if (flags.contains("F5PL")) {
-            /**
+            /*
              *F5PL: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
              *can take CausativeDHr suffix, can take ReciprocalHs suffix. e.g. Böl, dal
              */
             return "F5PL";
         }
         if (flags.contains("F5PR")) {
-            /**
+            /*
              *F5PR: The bare-form is a verb and depending on this attribute, the verb can take NominalVerb suffixes "-sHm, -SHn, -yHz, SHnHz, -lAr",
              *can take NominalVerb1 suffixes, "-yDH, -ysA
              ", can take NominalVerb2 suffix, "-ymHs", can take AdjectiveRoot suffix, "-SH",
@@ -217,14 +217,14 @@ public class TxtWord extends Word {
             return "F5PR";
         }
         if (flags.contains("F5PW")) {
-            /**
+            /*
              *F5PW: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix,
              *can take CausativeDHr suffix, can take ReciprocalHs suffix. e.g. Boşver, cezbet
              */
             return "F5PW";
         }
         if (flags.contains("F6P1")) {
-            /**
+            /*
              *F6P1: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveN suffix,
              *can take ReciprocalHs suffix, can take ReflexiveHn suffix. e.g. Gizle, hazırla, kaşı
              */
@@ -236,19 +236,19 @@ public class TxtWord extends Word {
     /**
      * The samePos method takes {@link TxtWord} as input and returns true if;
      * <p>
-     * flags {@link ArrayList} contains CL_ISIM or given word is CL_ISIM or
+     * flags {@link ArrayList} contains CL_ISIM
      * CL_ISIM: The bare-form of the word is a noun. e.g. Abla
      * <p>
-     * flags {@link ArrayList} contains CL_FIIL or given word is CL_FIIL or
+     * flags {@link ArrayList} contains CL_FIIL
      * CL_FIIL: The bare-form of the word is a verb. e.g. Affet
      * <p>
-     * flags {@link ArrayList} contains IS_ADJ or given word is IS_ADJ or
+     * flags {@link ArrayList} contains IS_ADJ
      * IS_ADJ: The bare-form of the word is a adjective. e.g. Acayip
      * <p>
-     * flags {@link ArrayList} contains IS_ZM or given word is IS_ZM or
+     * flags {@link ArrayList} contains IS_ZM
      * IS_ZM: The bare-form of the word is a pronoun. e.g. Başkası
      * <p>
-     * flags {@link ArrayList} contains IS_ADVERB or given word is IS_ADVERB, false otherwise.
+     * flags {@link ArrayList} contains IS_ADVERB
      * IS_ADVERB: The bare-form of the word is a adverb. e.g. Tekrar, açıktan, adeta
      *
      * @param word {@link TxtWord} type input.
@@ -626,9 +626,6 @@ public class TxtWord extends Word {
      * @return true if flags {@link ArrayList} contains IS_SD, F_SD.
      */
     public boolean rootSoftenDuringSuffixation() {
-        /*
-         *IS_SD: The bare-form final consonant gets devoiced during vowel-initial suffixation. e.g. Çakmak
-         */
         return flags.contains("IS_SD") || flags.contains("F_SD");
     }
 
@@ -795,7 +792,7 @@ public class TxtWord extends Word {
      */
     public boolean vowelAChangesToIDuringYSuffixation() {
         /*
-         *F_GUD: The verb bare-form includes viwel reduction, the last vowel "a" of the bare-form is replaced with "ı"
+         *F_GUD: The verb bare-form includes vowel reduction, the last vowel "a" of the bare-form is replaced with "ı"
          *e.g. Buzağıla
          */
         return flags.contains("F_GUD");

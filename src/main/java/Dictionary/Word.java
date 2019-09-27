@@ -131,8 +131,8 @@ public class Word implements Serializable {
      * @return true if it equals to "bay" or "bayan", false otherwise.
      */
     public static boolean isHonorific(String surfaceForm) {
-        String lowercase = surfaceForm.toLowerCase(new Locale("tr"));
-        return lowercase.equals("bay") || lowercase.equals("bayan");
+        String lowerCase = surfaceForm.toLowerCase(new Locale("tr"));
+        return lowerCase.equals("bay") || lowerCase.equals("bayan");
     }
 
     /**
@@ -143,8 +143,8 @@ public class Word implements Serializable {
      * @return true if it equals to "şirket", "corp", "inc.", or "co.", and false otherwise.
      */
     public static boolean isOrganization(String surfaceForm) {
-        String lowercase = surfaceForm.toLowerCase(new Locale("tr"));
-        return lowercase.equals("corp") || lowercase.equals("inc.") || lowercase.equals("co.");
+        String lowerCase = surfaceForm.toLowerCase(new Locale("tr"));
+        return lowerCase.equals("corp") || lowerCase.equals("inc.") || lowerCase.equals("co.");
     }
 
     /**
@@ -155,8 +155,8 @@ public class Word implements Serializable {
      * @return true if it equals to one of the dolar, sterlin, paunt, ons, ruble, mark, frank, yan, sent, yen' or $, and false otherwise.
      */
     public static boolean isMoney(String surfaceForm) {
-        String lowercase = surfaceForm.toLowerCase(new Locale("tr"));
-        return lowercase.startsWith("dolar") || lowercase.startsWith("sterlin") || lowercase.startsWith("paunt") || lowercase.startsWith("ons") || lowercase.startsWith("ruble") || lowercase.startsWith("mark") || lowercase.startsWith("frank") || lowercase.equals("yen") || lowercase.startsWith("sent") || lowercase.startsWith("cent") || lowercase.startsWith("yen'") || lowercase.contains("$");
+        String lowerCase = surfaceForm.toLowerCase(new Locale("tr"));
+        return lowerCase.startsWith("dolar") || lowerCase.startsWith("sterlin") || lowerCase.startsWith("paunt") || lowerCase.startsWith("ons") || lowerCase.startsWith("ruble") || lowerCase.startsWith("mark") || lowerCase.startsWith("frank") || lowerCase.equals("yen") || lowerCase.startsWith("sent") || lowerCase.startsWith("cent") || lowerCase.startsWith("yen'") || lowerCase.contains("$");
     }
 
     /**
@@ -173,7 +173,7 @@ public class Word implements Serializable {
 
     /**
      * The isTime method takes a String surfaceForm as an input and after converting it to lower case it checks some cases.
-     * If it is in the form of 12:23:34 or 12:23 ir returns true.
+     * If it is in the form of 12:23:34 or 12:23 it returns true.
      * If it starts with name of months; ocak, şubat, mart, nisan, mayıs, haziran, temmuz, ağustos, eylül, ekim, kasım, aralık it returns true.
      * If it equals to the name of days; pazar, pazartesi, salı, çarşamba, perşembe, cuma, cumartesi it returns true.
      *
@@ -181,21 +181,21 @@ public class Word implements Serializable {
      * @return true if it presents time, and false otherwise.
      */
     public static boolean isTime(String surfaceForm) {
-        String lowercase = surfaceForm.toLowerCase(new Locale("tr"));
-        if (lowercase.matches("(\\d\\d|\\d):(\\d\\d|\\d):(\\d\\d|\\d)") || lowercase.matches("(\\d\\d|\\d):(\\d\\d|\\d)")) {
+        String lowerCase = surfaceForm.toLowerCase(new Locale("tr"));
+        if (lowerCase.matches("(\\d\\d|\\d):(\\d\\d|\\d):(\\d\\d|\\d)") || lowerCase.matches("(\\d\\d|\\d):(\\d\\d|\\d)")) {
             return true;
         }
-        if (lowercase.startsWith("ocak") || lowercase.startsWith("şubat") || lowercase.startsWith("mart") || lowercase.startsWith("nisan") || lowercase.startsWith("mayıs") || lowercase.startsWith("haziran") || lowercase.startsWith("temmuz") || lowercase.startsWith("ağustos") || lowercase.startsWith("eylül") || lowercase.startsWith("ekim") || lowercase.startsWith("kasım") || lowercase.equals("aralık")) {
+        if (lowerCase.startsWith("ocak") || lowerCase.startsWith("şubat") || lowerCase.startsWith("mart") || lowerCase.startsWith("nisan") || lowerCase.startsWith("mayıs") || lowerCase.startsWith("haziran") || lowerCase.startsWith("temmuz") || lowerCase.startsWith("ağustos") || lowerCase.startsWith("eylül") || lowerCase.startsWith("ekim") || lowerCase.startsWith("kasım") || lowerCase.equals("aralık")) {
             return true;
         }
-        if (lowercase.equals("pazar") || lowercase.equals("salı") || lowercase.startsWith("çarşamba") || lowercase.startsWith("perşembe") || lowercase.equals("cuma") || lowercase.startsWith("cumartesi") || lowercase.startsWith("pazartesi")) {
+        if (lowerCase.equals("pazar") || lowerCase.equals("salı") || lowerCase.startsWith("çarşamba") || lowerCase.startsWith("perşembe") || lowerCase.equals("cuma") || lowerCase.startsWith("cumartesi") || lowerCase.startsWith("pazartesi")) {
             return true;
         }
-        if (lowercase.contains("'")) {
-            lowercase = lowercase.substring(0, lowercase.indexOf("'"));
+        if (lowerCase.contains("'")) {
+            lowerCase = lowerCase.substring(0, lowerCase.indexOf("'"));
         }
         try {
-            int time = Integer.parseInt(lowercase);
+            int time = Integer.parseInt(lowerCase);
             if (time > 1900 && time < 2200) {
                 return true;
             }
