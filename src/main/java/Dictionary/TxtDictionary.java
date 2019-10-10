@@ -4,9 +4,11 @@ import Dictionary.Trie.Trie;
 
 import java.io.*;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Locale;
 
 public class TxtDictionary extends Dictionary {
+    private HashMap<String, String> misspelledWords = new HashMap<>();
 
     /**
      * A constructor of {@link TxtDictionary} class which takes a {@link WordComparator} as an input and calls its super
@@ -41,6 +43,27 @@ public class TxtDictionary extends Dictionary {
             loadFromText(new FileInputStream(filename));
         } catch (FileNotFoundException e) {
             System.out.println("File " + filename + " not found");
+        }
+    }
+
+    /**
+     * Another constructor of {@link TxtDictionary} class which takes a String filename, a {@link WordComparator} and
+     * a misspelled word dictionary file as inputs. And calls its super class {@link Dictionary} with given
+     * {@link WordComparator}, assigns given filename input to the filename variable. Then, it calls loadFromText
+     * method with given filename. It also loads the misspelling file.
+     *
+     * @param fileName   String input.
+     * @param comparator {@link WordComparator} input.
+     * @param misspelledFileName String input.
+     */
+    public TxtDictionary(String fileName, WordComparator comparator, String misspelledFileName) {
+        super(comparator);
+        this.filename = fileName;
+        try {
+            loadFromText(new FileInputStream(fileName));
+            loadMisspelledWords(new FileInputStream(misspelledFileName));
+        } catch (FileNotFoundException e) {
+            System.out.println("File " + fileName + " not found");
         }
     }
 
@@ -269,6 +292,43 @@ public class TxtDictionary extends Dictionary {
             e.printStackTrace();
         }
         Collections.sort(words, comparator);
+    }
+
+    /**
+     * The loadMisspellWords method takes a String filename as an input. It reads given file line by line and splits
+     * according to space and assigns each word with its misspelled form to the the misspelledWords hashMap.
+     *
+     * @param fileInputStream File stream input.
+     */
+    private void loadMisspelledWords(InputStream fileInputStream) {
+        int i;
+        String line;
+        String[] list;
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream, "UTF8"));
+            line = br.readLine();
+            while (line != null) {
+                list = line.split(" ");
+                if (list.length == 2) {
+                    misspelledWords.put(list[0], list[1]);
+                }
+                line = br.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * The getCorrectForm returns the correct form of a misspelled word.
+     * @param misspelledWord Misspelled form.
+     * @return Correct form.
+     */
+    public String getCorrectForm(String misspelledWord){
+        if (misspelledWords.containsKey(misspelledWord)){
+            return misspelledWords.get(misspelledWord);
+        }
+        return null;
     }
 
     /**
