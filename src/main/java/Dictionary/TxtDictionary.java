@@ -61,9 +61,13 @@ public class TxtDictionary extends Dictionary {
         this.filename = fileName;
         try {
             loadFromText(new FileInputStream(fileName));
-            loadMisspelledWords(new FileInputStream(misspelledFileName));
         } catch (FileNotFoundException e) {
             System.out.println("File " + fileName + " not found");
+        }
+        try {
+            loadMisspelledWords(new FileInputStream(misspelledFileName));
+        } catch (FileNotFoundException e) {
+            System.out.println("File " + misspelledFileName + " not found");
         }
     }
 
