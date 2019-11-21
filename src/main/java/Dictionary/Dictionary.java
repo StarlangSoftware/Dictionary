@@ -44,6 +44,17 @@ public class Dictionary implements Serializable {
     }
 
     /**
+     * RemoveWord removes a word with the given name
+     * @param name Name of the word to be removed.
+     */
+    public void removeWord(String name){
+        int middle = Collections.binarySearch(words, new Word(name), comparator);
+        if (middle >= 0){
+            words.remove(middle);
+        }
+    }
+
+    /**
      * The getWordIndex method takes a String name as an input and performs binary search within words {@link ArrayList} and assigns the result
      * to integer variable middle. If the middle is greater than 0, it returns the index middle, -1 otherwise.
      *
