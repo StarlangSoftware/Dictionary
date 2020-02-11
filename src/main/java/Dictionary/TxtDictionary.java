@@ -3,6 +3,7 @@ package Dictionary;
 import Dictionary.Trie.Trie;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
@@ -26,6 +27,7 @@ public class TxtDictionary extends Dictionary {
         File file = new File(classLoader.getResource("turkish_dictionary.txt").getFile());
         this.filename = file.getName();
         loadFromText(classLoader.getResourceAsStream("turkish_dictionary.txt"));
+        loadMisspelledWords(classLoader.getResourceAsStream("turkish_misspellings.txt"));
     }
 
     /**
@@ -279,7 +281,7 @@ public class TxtDictionary extends Dictionary {
         String[] list;
         TxtWord currentWord;
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream, "UTF8"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
             line = br.readLine();
             while (line != null) {
                 list = line.split(" ");
@@ -309,7 +311,7 @@ public class TxtDictionary extends Dictionary {
         String line;
         String[] list;
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream, "UTF8"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
             line = br.readLine();
             while (line != null) {
                 list = line.split(" ");
@@ -344,7 +346,7 @@ public class TxtDictionary extends Dictionary {
         BufferedWriter outfile;
         int i;
         try {
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(filename), "UTF-8");
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(filename), StandardCharsets.UTF_8);
             outfile = new BufferedWriter(writer);
             for (i = 0; i < words.size(); i++) {
                 outfile.write(words.get(i).toString() + "\n");
