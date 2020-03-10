@@ -85,23 +85,8 @@ Dictionary
 
 ### Maven Usage
 
-    <groupId>NlpToolkit</groupId>
-    <artifactId>Dictionary</artifactId>
-    <version>1.0.5</version>
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-    <repositories>
-        <repository>
-            <id>NlpToolkit</id>
-            <url>http://haydut.isikun.edu.tr:8081/artifactory/NlpToolkit</url>
-        </repository>
-    </repositories>
-    <dependencies>
-        <dependency>
-            <groupId>NlpToolkit</groupId>
-            <artifactId>Math</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
+	<dependency>
+  	<groupId>NlpToolkit</groupId>
+  	<artifactId>Dictionary</artifactId>
+  	<version>1.0.12</version>
+	</dependency>
