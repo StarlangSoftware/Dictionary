@@ -166,9 +166,7 @@ public class Word implements Serializable {
      * @return true if name is a punctuation.
      */
     public boolean isPunctuation() {
-        return name.equals(",") || name.equals(".") || name.equals("!") || name.equals("?") || name.equals(":")
-                || name.equals(";") || name.equals("\"") || name.equals("''") || name.equals("'") || name.equals("`")
-                || name.equals("``") || name.equals("...") || name.equals("-") || name.equals("--");
+        return Word.isPunctuation(name);
     }
 
     /**

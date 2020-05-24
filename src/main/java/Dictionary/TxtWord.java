@@ -68,12 +68,6 @@ public class TxtWord extends Word {
      * @return the corresponding cases.
      */
     public String verbType() {
-        if (flags.contains("F1P1-NO-REF")) {
-            /*
-             There is no example in the Turkish dictionary.
-             */
-            return "F1P1-NO-REF";
-        }
         if (flags.contains("F2P1-NO-REF")) {
             /*
              F2P1-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,

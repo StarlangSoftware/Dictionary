@@ -44,8 +44,10 @@ public class SyllableList {
                 if (tempSyl.length() == 1) {
                     // The previous character was also a consonant.
                     if (!TurkishLanguage.isVowel(tempSyl.charAt(0))) {
-                        if (syllables.size() == 0)
-                            throw new IrregularWordException("The word " + word + " is not a regular Turkish word.");
+                        if (syllables.size() == 0){
+                            sbSyllable.append(c);
+                            continue;
+                        }
                         int lastPos = syllables.size() - 1;
                         String str = syllables.get(lastPos).getText();
                         str = str + tempSyl;
