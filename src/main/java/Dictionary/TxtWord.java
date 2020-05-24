@@ -841,6 +841,7 @@ public class TxtWord extends Word {
     /**
      * The containsFlag method returns true if flags {@link ArrayList} contains flag.
      *
+     * @param flag Flag to be cheked
      * @return true if flags {@link ArrayList} contains flag.
      */
     public boolean containsFlag(String flag){
