@@ -30,7 +30,7 @@ public class DictionaryTest {
         assertTrue(mixedCaseDictionary.getWordIndex("Ç") == 6 || mixedCaseDictionary.getWordIndex("Ç") == 7);
         assertTrue(mixedCaseDictionary.getWordIndex("Ğ") == 16 || mixedCaseDictionary.getWordIndex("Ğ") == 17);
         assertTrue(mixedCaseDictionary.getWordIndex("I") == 20 || mixedCaseDictionary.getWordIndex("I") == 21);
-        assertTrue(mixedCaseDictionary.getWordIndex("İ") == 22 || mixedCaseDictionary.getWordIndex("I") == 23);
+        assertTrue(mixedCaseDictionary.getWordIndex("İ") == 22 || mixedCaseDictionary.getWordIndex("İ") == 23);
         assertTrue(mixedCaseDictionary.getWordIndex("Ş") == 44 || mixedCaseDictionary.getWordIndex("Ş") == 45);
         assertTrue(mixedCaseDictionary.getWordIndex("Ü") == 50 || mixedCaseDictionary.getWordIndex("Ü") == 51);
         assertTrue(mixedCaseDictionary.getWordIndex("Z") == 56 || mixedCaseDictionary.getWordIndex("Z") == 57);
