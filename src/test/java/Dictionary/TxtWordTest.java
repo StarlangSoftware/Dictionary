@@ -168,7 +168,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(1296, count);
+        assertEquals(1294, count);
     }
 
     @Test
