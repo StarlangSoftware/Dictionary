@@ -336,7 +336,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(5466 + 90 - 1, count);
+        assertEquals(5468 + 90 - 1, count);
     }
 
     @Test
@@ -372,7 +372,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(5466, count);
+        assertEquals(5468, count);
     }
 
     @Test
