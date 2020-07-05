@@ -70,7 +70,7 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
      * @return VectorizedWord type result which holds the most similar word to the given word.
      */
     public VectorizedWord mostSimilarWord(String name) {
-        double maxDistance = -Double.MAX_VALUE;
+        double maxSimilarity = -Double.MAX_VALUE;
         VectorizedWord result = null;
         VectorizedWord word = (VectorizedWord) getWord(name);
         if (word == null) {
@@ -79,13 +79,13 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
         for (Word currentWord : words) {
             VectorizedWord current = (VectorizedWord) currentWord;
             if (!current.equals(word)) {
-                double distance = 0;
+                double similarity = 0;
                 try {
-                    distance = word.getVector().dotProduct(current.getVector());
+                    similarity = word.getVector().cosineSimilarity(current.getVector());
                 } catch (VectorSizeMismatch vectorSizeMismatch) {
                 }
-                if (distance > maxDistance) {
-                    maxDistance = distance;
+                if (similarity > maxSimilarity) {
+                    maxSimilarity = similarity;
                     result = current;
                 }
             }
@@ -134,8 +134,8 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
                 Vector v = comparedWord.getVector(), vA = wordA.getVector(), vB = wordB.getVector();
                 double result1 = 0, result2 = 0;
                 try {
-                    result1 = v.dotProduct(vB) / Math.sqrt(v.dotProduct() * vB.dotProduct());
-                    result2 = v.dotProduct(vA) / Math.sqrt(v.dotProduct() * vA.dotProduct());
+                    result1 = v.cosineSimilarity(vB);
+                    result2 = v.cosineSimilarity(vA);
                 } catch (VectorSizeMismatch vectorSizeMismatch) {
                     vectorSizeMismatch.printStackTrace();
                 }
@@ -190,20 +190,20 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
             }
             for (Word word : words) {
                 VectorizedWord vectorizedWord = (VectorizedWord) word;
-                double maxClusterDistance = 0;
+                double maxClusterSimilarity = 0;
                 try {
-                    maxClusterDistance = means[0].dotProduct(vectorizedWord.getVector());
+                    maxClusterSimilarity = means[0].cosineSimilarity(vectorizedWord.getVector());
                 } catch (VectorSizeMismatch vectorSizeMismatch) {
                 }
                 int maxClusterIndex = 0;
                 for (int j = 1; j < k; j++) {
                     double clusterDistance = 0;
                     try {
-                        clusterDistance = means[j].dotProduct(vectorizedWord.getVector());
+                        clusterDistance = means[j].cosineSimilarity(vectorizedWord.getVector());
                     } catch (VectorSizeMismatch vectorSizeMismatch) {
                     }
-                    if (clusterDistance > maxClusterDistance) {
-                        maxClusterDistance = clusterDistance;
+                    if (clusterDistance > maxClusterSimilarity) {
+                        maxClusterSimilarity = clusterDistance;
                         maxClusterIndex = j;
                     }
                 }

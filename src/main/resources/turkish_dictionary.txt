@@ -18179,8 +18179,8 @@ ferhan IS_OA
 ferhane CL_ISIM
 ferhat IS_OA
 ferhattin IS_OA
-ferhun(ı) IS_OA
-ferhun(ıı) IS_OA
+ferhu IS_OA
+ferhun IS_OA
 ferhunde IS_OA
 feri IS_ADJ IS_OA
 ferî IS_ADJ
