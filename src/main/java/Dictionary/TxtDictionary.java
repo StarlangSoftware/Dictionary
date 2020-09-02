@@ -41,11 +41,8 @@ public class TxtDictionary extends Dictionary {
     public TxtDictionary(String filename, WordComparator comparator) {
         super(comparator);
         this.filename = filename;
-        try {
-            loadFromText(new FileInputStream(filename));
-        } catch (FileNotFoundException e) {
-            System.out.println("File " + filename + " not found");
-        }
+        ClassLoader classLoader = getClass().getClassLoader();
+        loadFromText(classLoader.getResourceAsStream(filename));
     }
 
     /**
@@ -61,16 +58,9 @@ public class TxtDictionary extends Dictionary {
     public TxtDictionary(String fileName, WordComparator comparator, String misspelledFileName) {
         super(comparator);
         this.filename = fileName;
-        try {
-            loadFromText(new FileInputStream(fileName));
-        } catch (FileNotFoundException e) {
-            System.out.println("File " + fileName + " not found");
-        }
-        try {
-            loadMisspelledWords(new FileInputStream(misspelledFileName));
-        } catch (FileNotFoundException e) {
-            System.out.println("File " + misspelledFileName + " not found");
-        }
+        ClassLoader classLoader = getClass().getClassLoader();
+        loadFromText(classLoader.getResourceAsStream(fileName));
+        loadMisspelledWords(classLoader.getResourceAsStream(misspelledFileName));
     }
 
     /**
