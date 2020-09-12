@@ -1,6 +1,6 @@
 For Developers
 ============
-You can also see [Python](https://github.com/olcaytaner/Dictionary-Py), [C++](https://github.com/olcaytaner/Dictionary-CPP), or [C#](https://github.com/olcaytaner/Dictionary-CS) repository.
+You can also see [Python](https://github.com/starlangsoftware/Dictionary-Py), [C++](https://github.com/starlangsoftware/Dictionary-CPP), [Swift](https://github.com/starlangsoftware/Dictionary-Swift), or [C#](https://github.com/starlangsoftware/Dictionary-CS) repository.
 
 ## Requirements
 
