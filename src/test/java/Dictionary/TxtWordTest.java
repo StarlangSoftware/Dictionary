@@ -30,25 +30,25 @@ public class TxtWordTest {
         assertEquals(5, (int) verbs.get("F2P1-NO-REF"));
         assertEquals(1, (int) verbs.get("F3P1-NO-REF"));
         assertEquals(1, (int) verbs.get("F4P1-NO-REF"));
-        assertEquals(17, (int) verbs.get("F4PR-NO-REF"));
-        assertEquals(3, (int) verbs.get("F4PL-NO-REF"));
-        assertEquals(74, (int) verbs.get("F4PW-NO-REF"));
-        assertEquals(11, (int) verbs.get("F5PL-NO-REF"));
-        assertEquals(121, (int) verbs.get("F5PR-NO-REF"));
+        assertEquals(14, (int) verbs.get("F4PR-NO-REF"));
+        assertEquals(2, (int) verbs.get("F4PL-NO-REF"));
+        assertEquals(67, (int) verbs.get("F4PW-NO-REF"));
+        assertEquals(10, (int) verbs.get("F5PL-NO-REF"));
+        assertEquals(111, (int) verbs.get("F5PR-NO-REF"));
         assertEquals(1, (int) verbs.get("F5PW-NO-REF"));
         assertEquals(2, (int) verbs.get("F1P1"));
-        assertEquals(12, (int) verbs.get("F2P1"));
+        assertEquals(11, (int) verbs.get("F2P1"));
         assertEquals(4, (int) verbs.get("F3P1"));
         assertEquals(1, (int) verbs.get("F4P1"));
         assertEquals(1, (int) verbs.get("F5P1"));
         assertEquals(7, (int) verbs.get("F6P1"));
         assertEquals(2, (int) verbs.get("F2PL"));
-        assertEquals(51, (int) verbs.get("F4PL"));
-        assertEquals(19, (int) verbs.get("F5PL"));
-        assertEquals(185, (int) verbs.get("F4PR"));
-        assertEquals(849, (int) verbs.get("F5PR"));
-        assertEquals(1474, (int) verbs.get("F4PW"));
-        assertEquals(14, (int) verbs.get("F5PW"));
+        assertEquals(49, (int) verbs.get("F4PL"));
+        assertEquals(18, (int) verbs.get("F5PL"));
+        assertEquals(173, (int) verbs.get("F4PR"));
+        assertEquals(808, (int) verbs.get("F5PR"));
+        assertEquals(1396, (int) verbs.get("F4PW"));
+        assertEquals(13, (int) verbs.get("F5PW"));
     }
 
     @Test
@@ -60,7 +60,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(29119, count);
+        assertEquals(30593, count);
     }
 
     @Test
@@ -96,7 +96,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(106, count);
+        assertEquals(104, count);
     }
 
     @Test
@@ -108,7 +108,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(106, count);
+        assertEquals(104, count);
     }
 
     @Test
@@ -120,7 +120,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(8063, count);
+        assertEquals(9671, count);
     }
 
     @Test
@@ -132,7 +132,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(49, count);
+        assertEquals(48, count);
     }
 
     @Test
@@ -156,7 +156,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(4859, count);
+        assertEquals(5041, count);
     }
 
     @Test
@@ -192,7 +192,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(55, count);
+        assertEquals(48, count);
     }
 
     @Test
@@ -204,7 +204,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(1804, count);
+        assertEquals(1845, count);
     }
 
     @Test
@@ -216,7 +216,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(49, count);
+        assertEquals(47, count);
     }
 
     @Test
@@ -276,7 +276,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(19062, count);
+        assertEquals(19011, count);
     }
 
     @Test
@@ -312,7 +312,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(316, count);
+        assertEquals(315, count);
     }
 
     @Test
@@ -336,7 +336,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(5468 + 90 - 1, count);
+        assertEquals(5529, count);
     }
 
     @Test
@@ -348,7 +348,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(16, count);
+        assertEquals(14, count);
     }
 
     @Test
@@ -360,7 +360,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(90, count);
+        assertEquals(87, count);
     }
 
     @Test
@@ -372,7 +372,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(5468, count);
+        assertEquals(5443, count);
     }
 
     @Test
@@ -396,7 +396,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(34, count);
+        assertEquals(31, count);
     }
 
     @Test
@@ -432,7 +432,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(170, count);
+        assertEquals(167, count);
     }
 
     @Test
@@ -444,7 +444,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(7, count);
+        assertEquals(4, count);
     }
 
     @Test
@@ -456,7 +456,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(20, count);
+        assertEquals(16, count);
     }
 
     @Test
@@ -480,7 +480,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(12, count);
+        assertEquals(11, count);
     }
 
     @Test
@@ -492,7 +492,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(1363, count);
+        assertEquals(1299, count);
     }
 
     @Test
@@ -516,7 +516,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(52, count);
+        assertEquals(51, count);
     }
 
     @Test
@@ -528,7 +528,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(207, count);
+        assertEquals(197, count);
     }
 
     @Test
@@ -540,6 +540,6 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(6, count);
+        assertEquals(5, count);
     }
 }
