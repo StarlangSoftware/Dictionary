@@ -78,5 +78,5 @@ Use below line to generate jar file:
         <dependency>
             <groupId>io.github.starlangsoftware</groupId>
             <artifactId>Dictionary</artifactId>
-            <version>1.0.12</version>
+            <version>1.0.18</version>
         </dependency>
