@@ -60,7 +60,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(30593, count);
+        assertEquals(30601, count);
     }
 
     @Test
@@ -120,7 +120,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(9671, count);
+        assertEquals(9679, count);
     }
 
     @Test
@@ -132,7 +132,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(48, count);
+        assertEquals(49, count);
     }
 
     @Test
@@ -156,7 +156,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(5041, count);
+        assertEquals(5042, count);
     }
 
     @Test
@@ -192,7 +192,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(48, count);
+        assertEquals(51, count);
     }
 
     @Test
@@ -204,7 +204,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(1845, count);
+        assertEquals(1849, count);
     }
 
     @Test
@@ -216,7 +216,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(47, count);
+        assertEquals(49, count);
     }
 
     @Test
@@ -276,7 +276,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(19011, count);
+        assertEquals(19012, count);
     }
 
     @Test
@@ -492,7 +492,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(1299, count);
+        assertEquals(1300, count);
     }
 
     @Test

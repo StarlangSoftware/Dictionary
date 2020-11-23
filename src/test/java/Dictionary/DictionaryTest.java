@@ -40,7 +40,7 @@ public class DictionaryTest {
     public void testSize() {
         assertEquals(29, lowerCaseDictionary.size());
         assertEquals(58, mixedCaseDictionary.size());
-        assertEquals(62112, dictionary.size());
+        assertEquals(62116, dictionary.size());
     }
 
     @Test
