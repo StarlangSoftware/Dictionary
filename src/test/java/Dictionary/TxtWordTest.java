@@ -104,11 +104,11 @@ public class TxtWordTest {
         int count = 0;
         for (int i = 0; i < dictionary.size(); i++){
             TxtWord word = (TxtWord) dictionary.getWord(i);
-            if (word.isInterjection()){
+            if (word.isDuplicate()){
                 count++;
             }
         }
-        assertEquals(104, count);
+        assertEquals(124, count);
     }
 
     @Test
