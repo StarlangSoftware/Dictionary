@@ -27,7 +27,6 @@ Each bare-form has a set of attributes. For instance, ‘abacı’ is a noun, th
 |IS_SD, IS_SDD, F_SD|Final consonant gets devoiced during vowel-initial suffixation.|
 |F GUD, F_GUDO|The verb bare-form includes vowel reduction.|
 |F1P1, F1P1-NO-REF|A verb, and depending on this attribute, the verb can (or can not) take causative suffix, factitive suffix, passive suffix etc.|
-|---|---|
 
 For Developers
 ============
