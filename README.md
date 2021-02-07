@@ -12,6 +12,23 @@ From derivational suffixes, we only include words which has taken -lI, -sIz, -CI
 
 Each bare-form has a set of attributes. For instance, ‘abacı’ is a noun, therefore, it includes CL_ISIM attribute. Similarly, ‘abdestli’ is an adjective, which includes IS_ADJ attribute. If the bare-form has homonyms with different part of speech tags, all corresponding attributes are included.
 
+|Name|Purpose|
+|---|---|
+|CL ISIM, CL FIIL, IS_OA|Part of speech tag(s)|
+|IS_DUP|Part of a duplicate form|
+|IS_KIS|Abbreviation, which does not obey vowel harmony while taking suffixes.|
+|IS_UU, IS_UUU|Does not obey vowel harmony while taking suffixes.|
+|IS_BILES|A portmanteau word in affixed form, such as ‘adamotu’|
+|IS_B_SI|A portmanteau word ending with ‘sı’, such as ‘acemlalesi’|
+|IS_CA|Already in a plural form, therefore can not take plural suffixes such as ‘ler’ or ‘lar’.|
+|IS_ST|The second consonant undergoes a resyllabification.|
+|IS_UD, IS_UDD, F_UD|Includes vowel epenthesis.|
+|IS_KG|Ends with a ‘k’, and when it is followed by a vowel-initial suffix, the final ‘k’ is replaced with a ‘g’.|
+|IS_SD, IS_SDD, F_SD|Final consonant gets devoiced during vowel-initial suffixation.|
+|F GUD, F_GUDO|The verb bare-form includes vowel reduction.|
+|F1P1, F1P1-NO-REF|A verb, and depending on this attribute, the verb can (or can not) take causative suffix, factitive suffix, passive suffix etc.|
+|---|---|
+
 For Developers
 ============
 
