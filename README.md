@@ -2,7 +2,7 @@ This resource is a dictionary of Modern Turkish, comprised of the definitions of
 
 The bare-forms in the lexicon consists of nouns, adjectives, verbs, adverbs, shortcuts, etc. Each bare-form appears the same in the lexicon except verbs. Since the bare-forms of the verbs in Turkish do not have the infinitive affix ‘mAk’, our lexicon includes all verbs without the infinitive affix. The bare-forms with diacritics are included in two forms, with and without diacritics. For example, noun ‘rüzgar’ appear both as ‘rüzgar’ and ‘rüzgâr’.
 
-Special markers are included as bare-forms such as <doc>, <s>, etc.
+Special markers are included as bare-forms such as doc, s, etc.
 
 Some compound words are included in their affixed form. For instance, ‘acemlalesi’ appears as it is, but not as ‘acemlale’.
 
