@@ -1,6 +1,7 @@
 package Dictionary;
 
 import Dictionary.Trie.Trie;
+import Util.FileUtils;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -25,7 +26,7 @@ public class TxtDictionary extends Dictionary {
         super(new TurkishWordComparator());
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("turkish_dictionary.txt").getFile());
-        this.filename = file.getName();
+        this.fileName = file.getName();
         loadFromText(classLoader.getResourceAsStream("turkish_dictionary.txt"));
         loadMisspelledWords(classLoader.getResourceAsStream("turkish_misspellings.txt"));
     }
@@ -35,14 +36,13 @@ public class TxtDictionary extends Dictionary {
      * And calls its super class {@link Dictionary} with given {@link WordComparator}, assigns given filename input to the
      * filename variable. Then, it calls loadFromText method with given filename.
      *
-     * @param filename   String input.
+     * @param fileName   String input.
      * @param comparator {@link WordComparator} input.
      */
-    public TxtDictionary(String filename, WordComparator comparator) {
+    public TxtDictionary(String fileName, WordComparator comparator) {
         super(comparator);
-        this.filename = filename;
-        ClassLoader classLoader = getClass().getClassLoader();
-        loadFromText(classLoader.getResourceAsStream(filename));
+        this.fileName = fileName;
+        loadFromText(FileUtils.getInputStream(fileName));
     }
 
     /**
@@ -57,10 +57,9 @@ public class TxtDictionary extends Dictionary {
      */
     public TxtDictionary(String fileName, WordComparator comparator, String misspelledFileName) {
         super(comparator);
-        this.filename = fileName;
-        ClassLoader classLoader = getClass().getClassLoader();
-        loadFromText(classLoader.getResourceAsStream(fileName));
-        loadMisspelledWords(classLoader.getResourceAsStream(misspelledFileName));
+        this.fileName = fileName;
+        loadFromText(FileUtils.getInputStream(fileName));
+        loadMisspelledWords(FileUtils.getInputStream(misspelledFileName));
     }
 
     /**
@@ -69,7 +68,7 @@ public class TxtDictionary extends Dictionary {
      * @return new {@link TxtDictionary} object.
      */
     public TxtDictionary clone() {
-        return new TxtDictionary(filename, comparator);
+        return new TxtDictionary(fileName, comparator);
     }
 
     /**
@@ -213,7 +212,7 @@ public class TxtDictionary extends Dictionary {
         String st1, st2;
         String word1, word2, flag;
         try {
-            first = new FileReader(filename);
+            first = new FileReader(fileName);
             firstfile = new BufferedReader(first);
             second = new FileReader(secondFileName);
             secondfile = new BufferedReader(second);

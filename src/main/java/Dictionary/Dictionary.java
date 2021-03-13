@@ -6,7 +6,7 @@ import java.util.*;
 public class Dictionary implements Serializable {
 
     protected List<Word> words;
-    protected String filename;
+    protected String fileName;
     protected WordComparator comparator;
 
     /**
