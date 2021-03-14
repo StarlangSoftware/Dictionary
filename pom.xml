@@ -6,7 +6,7 @@
 
     <groupId>io.github.starlangsoftware</groupId>
     <artifactId>Dictionary</artifactId>
-    <version>1.0.20</version>
+    <version>1.0.21</version>
     <packaging>jar</packaging>
 
     <name>NlpToolkit.Dictionary</name>
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>io.github.starlangsoftware</groupId>
             <artifactId>Util</artifactId>
-            <version>1.0.2</version>
+            <version>1.0.3</version>
         </dependency>
     </dependencies>
 
