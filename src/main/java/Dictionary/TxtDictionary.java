@@ -412,6 +412,9 @@ public class TxtDictionary extends Dictionary {
             if (root.equals("ben")) {
                 result.addWord("bana", word);
             }
+            if (root.equals("sen")) {
+                result.addWord("sana", word);
+            }
             rootWithoutLast = root.substring(0, length - 1);
             if (length > 1) {
                 rootWithoutLastTwo = root.substring(0, length - 2);

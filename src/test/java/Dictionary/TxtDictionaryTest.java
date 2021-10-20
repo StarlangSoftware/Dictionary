@@ -25,6 +25,7 @@ public class TxtDictionaryTest {
     public void testPrepareTrie(){
         Trie trie = dictionary.prepareTrie();
         assertTrue(trie.getWordsWithPrefix("bana").contains(new Word("ben")));
+        assertTrue(trie.getWordsWithPrefix("sana").contains(new Word("sen")));
         assertTrue(trie.getWordsWithPrefix("metni").contains(new Word("metin")));
         assertTrue(trie.getWordsWithPrefix("ağzı").contains(new Word("ağız")));
         assertTrue(trie.getWordsWithPrefix("ayrıldı").contains(new Word("ayır")));
