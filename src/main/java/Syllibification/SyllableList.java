@@ -17,7 +17,7 @@ public class SyllableList {
      * <p>
      * If it is not a vowel, and the sbSyllable's length is 1 also the previous character is a consonant it gets the last item of
      * syllables {@link ArrayList} since there cannot be a Turkish word which starts with two consonants. However, if it is
-     * two last characters of word, then it adds it to the syllable {@link ArrayList}. At the end, it updatse the syllables {@link ArrayList}.
+     * two last characters of word, then it adds it to the syllable {@link ArrayList}. At the end, it updates the syllables {@link ArrayList}.
      *
      * @param word String input.
      * @throws IrregularWordException if it is not a regular Turkish word.
