@@ -312,7 +312,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(315, count);
+        assertEquals(320, count);
     }
 
     @Test
@@ -336,7 +336,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(5530, count);
+        assertEquals(5531, count);
     }
 
     @Test
@@ -348,7 +348,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(14, count);
+        assertEquals(15, count);
     }
 
     @Test
@@ -372,7 +372,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(5444, count);
+        assertEquals(5445, count);
     }
 
     @Test
