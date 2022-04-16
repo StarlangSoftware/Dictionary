@@ -1,6 +1,7 @@
 package Dictionary;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class TxtWord extends Word {
 
@@ -850,6 +851,7 @@ public class TxtWord extends Word {
 
     public String toString(){
         StringBuilder result = new StringBuilder(super.toString());
+        flags.sort(Comparator.naturalOrder());
         for (String flag : flags){
             result.append(" ").append(flag);
         }
