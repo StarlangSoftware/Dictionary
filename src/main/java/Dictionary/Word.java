@@ -98,6 +98,68 @@ public class Word implements Serializable {
     }
 
     /**
+     * The beforeLastVowel method takes a {@link String} stem as an input. It loops through the given stem and returns
+     * the second last vowel.
+     *
+     * @param stem String input.
+     * @return Vowel before the last vowel.
+     */
+    public static char beforeLastVowel(String stem) {
+        int i, before = 1;
+        char last = '0';
+        for (i = stem.length() - 1; i >= 0; i--) {
+            if (TurkishLanguage.isVowel(stem.charAt(i))) {
+                if (before == 1) {
+                    last = stem.charAt(i);
+                    before--;
+                    continue;
+                }
+                return stem.charAt(i);
+            }
+        }
+        return last;
+    }
+
+    /**
+     * The lastVowel method takes a {@link String} stem as an input. It loops through the given stem and returns
+     * the last vowel.
+     *
+     * @param stem String input.
+     * @return the last vowel.
+     */
+    public static char lastVowel(String stem) {
+        int i;
+        for (i = stem.length() - 1; i >= 0; i--) {
+            if (TurkishLanguage.isVowel(stem.charAt(i))) {
+                return stem.charAt(i);
+            }
+        }
+        for (i = stem.length() - 1; i >= 0; i--) {
+            if (stem.charAt(i) >= '0' && stem.charAt(i) <= '9') {
+                return stem.charAt(i);
+            }
+        }
+        return '0';
+    }
+
+    /**
+     * The lastPhoneme method takes a {@link String} stem as an input. It then returns the last phoneme of the given stem.
+     *
+     * @param stem String input.
+     * @return the last phoneme.
+     */
+    public static char lastPhoneme(String stem) {
+        if (stem.length() == 0) {
+            return ' ';
+        }
+        if (stem.charAt(stem.length() - 1) != '\'') {
+            return stem.charAt(stem.length() - 1);
+        } else {
+            return stem.charAt(stem.length() - 2);
+        }
+    }
+
+    /**
      * The isCapital method takes a String surfaceForm as an input and returns true if the character at first index of surfaceForm
      * is a capital letter, false otherwise.
      *
