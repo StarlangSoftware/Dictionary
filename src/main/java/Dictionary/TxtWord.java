@@ -324,6 +324,24 @@ public class TxtWord extends Word {
     }
 
     /**
+     * The isCode method returns true if flags {@link ArrayList} contains IS_CODE.
+     *
+     * @return true if flags {@link ArrayList} contains IS_CODE.
+     */
+    public boolean isCode() {
+        return flags.contains("IS_CODE");
+    }
+
+    /**
+     * The isMetric method returns true if flags {@link ArrayList} contains IS_METRIC.
+     *
+     * @return true if flags {@link ArrayList} contains IS_METRIC.
+     */
+    public boolean isMetric() {
+        return flags.contains("IS_METRIC");
+    }
+
+    /**
      * The isHeader method returns true if flags {@link ArrayList} contains IS_HEADER.
      *
      * @return true if flags {@link ArrayList} contains IS_HEADER.
