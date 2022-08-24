@@ -29,6 +29,7 @@ public class TxtDictionary extends Dictionary {
         this.fileName = file.getName();
         loadFromText(classLoader.getResourceAsStream("turkish_dictionary.txt"));
         loadMisspelledWords(classLoader.getResourceAsStream("turkish_misspellings.txt"));
+        loadMorphologicalLexicon(classLoader.getResourceAsStream("turkish_morphological_lexicon.txt"));
     }
 
     /**
@@ -306,6 +307,28 @@ public class TxtDictionary extends Dictionary {
                 list = line.split(" ");
                 if (list.length == 2) {
                     misspelledWords.put(list[0], list[1]);
+                }
+                line = br.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadMorphologicalLexicon(InputStream fileInputStream) {
+        int i;
+        String line;
+        String[] list;
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
+            line = br.readLine();
+            while (line != null) {
+                list = line.split(" ");
+                if (list.length == 2) {
+                    TxtWord word = (TxtWord) getWord(list[0]);
+                    if (word != null){
+                        word.setMorphology(list[1]);
+                    }
                 }
                 line = br.readLine();
             }

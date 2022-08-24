@@ -22,6 +22,14 @@ public class TxtDictionaryTest {
     }
 
     @Test
+    public void testMorphology() {
+        assertEquals("ab", ((TxtWord) dictionary.getWord("ab")).getMorphology());
+        assertEquals("çarp+HcH+lHk", ((TxtWord) dictionary.getWord("çarpıcılık")).getMorphology());
+        assertEquals("aciz+lAş+yAbil+mA", ((TxtWord) dictionary.getWord("âcizleşebilme")).getMorphology());
+        assertEquals("ak+Hş+GAn+lAş+DHr+HCH+lHk", ((TxtWord) dictionary.getWord("akışkanlaştırıcılık")).getMorphology());
+    }
+
+    @Test
     public void testPrepareTrie(){
         Trie trie = dictionary.prepareTrie();
         assertTrue(trie.getWordsWithPrefix("bana").contains(new Word("ben")));

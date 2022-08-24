@@ -6,6 +6,7 @@ import java.util.Comparator;
 public class TxtWord extends Word {
 
     private ArrayList<String> flags;
+    private String morphology;
 
     /**
      * A constructor of {@link TxtWord} class which takes a String name as an input and calls its super class {@link Word}
@@ -61,6 +62,14 @@ public class TxtWord extends Word {
      */
     public void removeFlag(String flag) {
         flags.remove(flag);
+    }
+
+    public void setMorphology(String morphology){
+        this.morphology = morphology;
+    }
+
+    public String getMorphology(){
+        return morphology;
     }
 
     /**
