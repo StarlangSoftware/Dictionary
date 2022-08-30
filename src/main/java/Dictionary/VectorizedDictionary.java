@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 import Math.*;
 
@@ -104,7 +105,7 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
      * @param k Integer input.
      * @return ArrayList result.
      */
-    public ArrayList<VectorizedWord> mostSimilarKWords(String name, int k) {
+    public List<VectorizedWord> mostSimilarKWords(String name, int k) {
         class WordComparator implements Comparator<VectorizedWord> {
             private VectorizedWord comparedWord;
 
@@ -151,10 +152,7 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
             resultWords.add((VectorizedWord) currentWord);
         }
         Collections.sort(resultWords, new WordComparator(word));
-        while (resultWords.size() > k) {
-            resultWords.remove(resultWords.size() - 1);
-        }
-        return resultWords;
+        return resultWords.subList(0, k);
     }
 
     /**
