@@ -27,9 +27,9 @@ public class TxtDictionary extends Dictionary {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("turkish_dictionary.txt").getFile());
         this.fileName = file.getName();
-        loadFromText(classLoader.getResourceAsStream("turkish_dictionary.txt"));
-        loadMisspelledWords(classLoader.getResourceAsStream("turkish_misspellings.txt"));
-        loadMorphologicalLexicon(classLoader.getResourceAsStream("turkish_morphological_lexicon.txt"));
+        loadFromText(FileUtils.getInputStream("turkish_dictionary.txt"));
+        loadMisspelledWords(FileUtils.getInputStream("turkish_misspellings.txt"));
+        loadMorphologicalLexicon(FileUtils.getInputStream("turkish_morphological_lexicon.txt"));
     }
 
     /**
