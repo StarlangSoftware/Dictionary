@@ -221,7 +221,7 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
         }
         return result;
     }
-    void sort(){
+    public void sort(){
         words.sort(comparator);
     }
 
