@@ -31,7 +31,7 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
      */
     private void readObject(ObjectInputStream inputStream) throws ClassNotFoundException, IOException {
         inputStream.defaultReadObject();
-        Collections.sort(words, comparator);
+        words.sort(comparator);
     }
 
     /**
@@ -220,6 +220,9 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
             }
         }
         return result;
+    }
+    void sort(){
+        words.sort(comparator);
     }
 
 }
