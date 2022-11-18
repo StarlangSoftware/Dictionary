@@ -1,12 +1,11 @@
 package Dictionary;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
 import Math.*;
+import Math.Vector;
 
 public class VectorizedDictionary extends Dictionary implements Serializable {
 
@@ -18,6 +17,26 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
      */
     public VectorizedDictionary(WordComparator comparator) {
         super(comparator);
+    }
+
+    public VectorizedDictionary(String fileName, WordComparator comparator){
+        super(comparator);
+        try{
+            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fileName), StandardCharsets.UTF_8));
+            String line = br.readLine();
+            while (line != null){
+                String[] items = line.split(" ");
+                Vector vector = new Vector(0, 0);
+                for (int i = 1; i < items.length; i++){
+                    vector.add(Double.parseDouble(items[i]));
+                }
+                VectorizedWord vectorizedWord = new VectorizedWord(items[0], vector);
+                words.add(vectorizedWord);
+                line = br.readLine();
+            }
+            words.sort(comparator);
+        } catch (IOException f){
+        }
     }
 
     /**
@@ -32,6 +51,26 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
     private void readObject(ObjectInputStream inputStream) throws ClassNotFoundException, IOException {
         inputStream.defaultReadObject();
         words.sort(comparator);
+    }
+
+    public void saveAsText(String fileName){
+        BufferedWriter outfile;
+        int i;
+        try {
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8);
+            outfile = new BufferedWriter(writer);
+            for (i = 0; i < words.size(); i++) {
+                String result = words.get(i).toString();
+                Vector vector = ((VectorizedWord) words.get(i)).getVector();
+                for (int j = 0; j < vector.size(); j++){
+                    result += " " + vector.getValue(j);
+                }
+                outfile.write(result + "\n");
+            }
+            outfile.close();
+        } catch (IOException ioException) {
+            System.out.println("Output file can not be opened");
+        }
     }
 
     /**
