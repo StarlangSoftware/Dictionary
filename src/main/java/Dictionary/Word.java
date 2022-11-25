@@ -170,6 +170,10 @@ public class Word implements Serializable {
         return TurkishLanguage.UPPERCASE_LETTERS.indexOf(surfaceForm.charAt(0)) != -1;
     }
 
+    public static String toCapital(String surfaceForm){
+        return surfaceForm.substring(0, 1).toUpperCase(new Locale("tr")) + surfaceForm.substring(1);
+    }
+
     /**
      * The isPunctuation method takes a String surfaceForm as an input and returns true if it is a punctuation, false otherwise.
      * Grave accent : \u0060

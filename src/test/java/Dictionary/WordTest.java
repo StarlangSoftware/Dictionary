@@ -35,6 +35,14 @@ public class WordTest {
     }
 
     @Test
+    public void testToCapital() {
+        assertEquals("Ali", Word.toCapital("ali"));
+        assertEquals("İlginç", Word.toCapital("ilginç"));
+        assertEquals("Ç", Word.toCapital("ç"));
+        assertEquals("Issız", Word.toCapital("ıssız"));
+    }
+
+    @Test
     public void testIsPunctuation() {
         assertTrue(Word.isPunctuation("."));
         assertTrue(Word.isPunctuation("..."));
