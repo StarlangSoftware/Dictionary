@@ -188,6 +188,26 @@ public class Word implements Serializable {
     public static boolean isPunctuation(String surfaceForm) {
         return (surfaceForm.equalsIgnoreCase(".") || surfaceForm.equalsIgnoreCase("...") || surfaceForm.equalsIgnoreCase("[") || surfaceForm.equalsIgnoreCase("]") || surfaceForm.equalsIgnoreCase("\u2026") || surfaceForm.equalsIgnoreCase("%") || surfaceForm.equalsIgnoreCase("&") || surfaceForm.equalsIgnoreCase("=") || surfaceForm.equalsIgnoreCase("\u0060\u0060") || surfaceForm.equalsIgnoreCase("\u0060") || surfaceForm.equalsIgnoreCase("''") || surfaceForm.equalsIgnoreCase("$") || surfaceForm.equalsIgnoreCase("!") || surfaceForm.equalsIgnoreCase("?") || surfaceForm.equalsIgnoreCase(",") || surfaceForm.equalsIgnoreCase(":") || surfaceForm.equalsIgnoreCase("--") || surfaceForm.equalsIgnoreCase(";") || surfaceForm.equalsIgnoreCase("(") || surfaceForm.equalsIgnoreCase(")") || surfaceForm.equalsIgnoreCase("'") || surfaceForm.equalsIgnoreCase("\"") || surfaceForm.equalsIgnoreCase("\u201C") || surfaceForm.equalsIgnoreCase("\u2018") || surfaceForm.equalsIgnoreCase("\u201D") || surfaceForm.equalsIgnoreCase("…") || surfaceForm.equalsIgnoreCase("\u25CF") || surfaceForm.equalsIgnoreCase("/") || surfaceForm.equalsIgnoreCase("-") || surfaceForm.equalsIgnoreCase("+") || surfaceForm.equalsIgnoreCase("-LRB-") || surfaceForm.equalsIgnoreCase("-RRB-") || surfaceForm.equalsIgnoreCase("-LCB-") || surfaceForm.equalsIgnoreCase("-RCB-") || surfaceForm.equalsIgnoreCase("-LSB-") || surfaceForm.equalsIgnoreCase("-RSB-"));
     }
+    
+    public static boolean isEnglishStopWord(String surfaceForm){
+        return surfaceForm.equalsIgnoreCase("at") || surfaceForm.equalsIgnoreCase("the")
+                || surfaceForm.equalsIgnoreCase("to") || surfaceForm.equalsIgnoreCase("a") || surfaceForm.equalsIgnoreCase("an")
+                || surfaceForm.equalsIgnoreCase("not") || surfaceForm.equalsIgnoreCase("is") || surfaceForm.equalsIgnoreCase("was")
+                || surfaceForm.equalsIgnoreCase("were") || surfaceForm.equalsIgnoreCase("have") || surfaceForm.equalsIgnoreCase("had")
+                || surfaceForm.equalsIgnoreCase("has")
+                || surfaceForm.equalsIgnoreCase("by") || surfaceForm.equalsIgnoreCase("on")
+                || surfaceForm.equalsIgnoreCase("off") || surfaceForm.equalsIgnoreCase("'s") || surfaceForm.equalsIgnoreCase("n't")
+                || surfaceForm.equalsIgnoreCase("can") || surfaceForm.equalsIgnoreCase("could") || surfaceForm.equalsIgnoreCase("may")
+                || surfaceForm.equalsIgnoreCase("might") || surfaceForm.equalsIgnoreCase("will") || surfaceForm.equalsIgnoreCase("would")
+                || surfaceForm.equalsIgnoreCase("as") || surfaceForm.equalsIgnoreCase("with")
+                || surfaceForm.equalsIgnoreCase("for")
+                || surfaceForm.equalsIgnoreCase("than") || surfaceForm.equalsIgnoreCase("$")
+                || surfaceForm.equalsIgnoreCase("and") || surfaceForm.equalsIgnoreCase("or") || surfaceForm.equalsIgnoreCase("of")
+                || surfaceForm.equalsIgnoreCase("are") || surfaceForm.equalsIgnoreCase("be") || surfaceForm.equalsIgnoreCase("been")
+                || surfaceForm.equalsIgnoreCase("do") || surfaceForm.equalsIgnoreCase("few") || surfaceForm.equalsIgnoreCase("there")
+                || surfaceForm.equalsIgnoreCase("up") || surfaceForm.equalsIgnoreCase("down") || surfaceForm.equalsIgnoreCase("in")
+                || surfaceForm.equalsIgnoreCase("'re");
+    }
 
     /**
      * The isHonorific method takes a String surfaceForm as an input and after converting it to lower case it returns true
