@@ -57,7 +57,7 @@ public class SyllableList {
                         }
                         // Update previous syllable.
                         syllables.set(lastPos, new Syllable(str));
-                        sbSyllable = new StringBuilder(c);
+                        sbSyllable = new StringBuilder();
                     }
                 }
                 sbSyllable.append(c);
