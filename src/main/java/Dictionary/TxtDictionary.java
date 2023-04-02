@@ -184,8 +184,7 @@ public class TxtDictionary extends Dictionary {
         String lowerCase = name.toLowerCase(new Locale("tr"));
         word = (TxtWord) getWord(lowerCase);
         if (word == null) {
-            word = new TxtWord(lowerCase);
-            word.addFlag(flag);
+            word = new TxtWord(lowerCase, flag);
             int insertIndex = -Collections.binarySearch(words, word, comparator) - 1;
             if (insertIndex >= 0) {
                 words.add(insertIndex, word);
