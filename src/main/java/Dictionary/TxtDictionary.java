@@ -181,8 +181,10 @@ public class TxtDictionary extends Dictionary {
      */
     public boolean addWithFlag(String name, String flag) {
         TxtWord word;
-        if (getWord(name.toLowerCase(new Locale("tr"))) == null) {
-            word = new TxtWord(name.toLowerCase(new Locale("tr")));
+        String lowerCase = name.toLowerCase(new Locale("tr"));
+        word = (TxtWord) getWord(lowerCase);
+        if (word == null) {
+            word = new TxtWord(lowerCase);
             word.addFlag(flag);
             int insertIndex = -Collections.binarySearch(words, word, comparator) - 1;
             if (insertIndex >= 0) {
@@ -190,7 +192,6 @@ public class TxtDictionary extends Dictionary {
             }
             return true;
         } else {
-            word = (TxtWord) getWord(name.toLowerCase(new Locale("tr")));
             if (!word.containsFlag(flag)){
                 word.addFlag(flag);
             }
