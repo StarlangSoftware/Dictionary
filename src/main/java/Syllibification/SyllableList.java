@@ -5,7 +5,7 @@ import Language.TurkishLanguage;
 import java.util.ArrayList;
 
 public class SyllableList {
-    private ArrayList<Syllable> syllables;
+    private final ArrayList<Syllable> syllables;
 
     /**
      * A constructor of {@link SyllableList} class which takes a String word as an input. First it creates a syllable {@link ArrayList}
@@ -20,10 +20,9 @@ public class SyllableList {
      * two last characters of word, then it adds it to the syllable {@link ArrayList}. At the end, it updates the syllables {@link ArrayList}.
      *
      * @param word String input.
-     * @throws IrregularWordException if it is not a regular Turkish word.
      */
-    public SyllableList(String word) throws IrregularWordException {
-        syllables = new ArrayList<Syllable>();
+    public SyllableList(String word) {
+        syllables = new ArrayList<>();
         StringBuilder sbSyllable = new StringBuilder();
         for (int i = 0; i < word.length(); i++) {
             Character c = word.charAt(i);
@@ -44,7 +43,7 @@ public class SyllableList {
                 if (tempSyl.length() == 1) {
                     // The previous character was also a consonant.
                     if (!TurkishLanguage.isVowel(tempSyl.charAt(0))) {
-                        if (syllables.size() == 0){
+                        if (syllables.isEmpty()){
                             sbSyllable.append(c);
                             continue;
                         }

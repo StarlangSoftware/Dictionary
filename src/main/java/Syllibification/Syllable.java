@@ -1,7 +1,7 @@
 package Syllibification;
 
 public class Syllable {
-    private String syllable;
+    private final String syllable;
 
     /**
      * A constructor of {@link Syllable} class which takes a String as an input and initializes syllable variable with given input.

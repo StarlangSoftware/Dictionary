@@ -24,7 +24,7 @@ public class Dictionary implements Serializable {
      */
     public Dictionary(WordComparator comparator) {
         this.comparator = comparator;
-        words = new ArrayList<Word>();
+        words = new ArrayList<>();
     }
 
     /**

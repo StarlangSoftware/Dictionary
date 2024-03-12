@@ -1,8 +1,8 @@
 package Dictionary;
 
 public class ExceptionalWord extends Word {
-    private String root;
-    private Pos pos;
+    private final String root;
+    private final Pos pos;
 
     /**
      * A constructor of {@link ExceptionalWord} class which takes a {@link Pos} as a  part of speech and two Strings; name

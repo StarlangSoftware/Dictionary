@@ -149,7 +149,7 @@ public class Word implements Serializable {
      * @return the last phoneme.
      */
     public static char lastPhoneme(String stem) {
-        if (stem.length() == 0) {
+        if (stem.isEmpty()) {
             return ' ';
         }
         if (stem.charAt(stem.length() - 1) != '\'') {
@@ -176,17 +176,17 @@ public class Word implements Serializable {
 
     /**
      * The isPunctuation method takes a String surfaceForm as an input and returns true if it is a punctuation, false otherwise.
-     * Grave accent : \u0060
-     * Left quotation mark : \u201C
-     * Right quotation mark : \u201D
-     * Left single quotation mark : \u2018
-     *Horizontal ellipsis : \u2026
+     * Grave accent : `
+     * Left quotation mark : “
+     * Right quotation mark : ”
+     * Left single quotation mark : ‘
+     *Horizontal ellipsis : …
      *
      * @param surfaceForm String input to check.
      * @return true if it is a punctuation, false otherwise.
      */
     public static boolean isPunctuation(String surfaceForm) {
-        return (surfaceForm.equalsIgnoreCase(".") || surfaceForm.equalsIgnoreCase("...") || surfaceForm.equalsIgnoreCase("[") || surfaceForm.equalsIgnoreCase("]") || surfaceForm.equalsIgnoreCase("\u2026") || surfaceForm.equalsIgnoreCase("%") || surfaceForm.equalsIgnoreCase("&") || surfaceForm.equalsIgnoreCase("=") || surfaceForm.equalsIgnoreCase("\u0060\u0060") || surfaceForm.equalsIgnoreCase("\u0060") || surfaceForm.equalsIgnoreCase("''") || surfaceForm.equalsIgnoreCase("$") || surfaceForm.equalsIgnoreCase("!") || surfaceForm.equalsIgnoreCase("?") || surfaceForm.equalsIgnoreCase(",") || surfaceForm.equalsIgnoreCase(":") || surfaceForm.equalsIgnoreCase("--") || surfaceForm.equalsIgnoreCase(";") || surfaceForm.equalsIgnoreCase("(") || surfaceForm.equalsIgnoreCase(")") || surfaceForm.equalsIgnoreCase("'") || surfaceForm.equalsIgnoreCase("\"") || surfaceForm.equalsIgnoreCase("\u201C") || surfaceForm.equalsIgnoreCase("\u2018") || surfaceForm.equalsIgnoreCase("\u201D") || surfaceForm.equalsIgnoreCase("…") || surfaceForm.equalsIgnoreCase("\u25CF") || surfaceForm.equalsIgnoreCase("/") || surfaceForm.equalsIgnoreCase("-") || surfaceForm.equalsIgnoreCase("+") || surfaceForm.equalsIgnoreCase("-LRB-") || surfaceForm.equalsIgnoreCase("-RRB-") || surfaceForm.equalsIgnoreCase("-LCB-") || surfaceForm.equalsIgnoreCase("-RCB-") || surfaceForm.equalsIgnoreCase("-LSB-") || surfaceForm.equalsIgnoreCase("-RSB-"));
+        return (surfaceForm.equalsIgnoreCase(".") || surfaceForm.equalsIgnoreCase("...") || surfaceForm.equalsIgnoreCase("[") || surfaceForm.equalsIgnoreCase("]") || surfaceForm.equalsIgnoreCase("%") || surfaceForm.equalsIgnoreCase("&") || surfaceForm.equalsIgnoreCase("=") || surfaceForm.equalsIgnoreCase("``") || surfaceForm.equalsIgnoreCase("`") || surfaceForm.equalsIgnoreCase("''") || surfaceForm.equalsIgnoreCase("$") || surfaceForm.equalsIgnoreCase("!") || surfaceForm.equalsIgnoreCase("?") || surfaceForm.equalsIgnoreCase(",") || surfaceForm.equalsIgnoreCase(":") || surfaceForm.equalsIgnoreCase("--") || surfaceForm.equalsIgnoreCase(";") || surfaceForm.equalsIgnoreCase("(") || surfaceForm.equalsIgnoreCase(")") || surfaceForm.equalsIgnoreCase("'") || surfaceForm.equalsIgnoreCase("\"") || surfaceForm.equalsIgnoreCase("“") || surfaceForm.equalsIgnoreCase("‘") || surfaceForm.equalsIgnoreCase("”") || surfaceForm.equalsIgnoreCase("…") || surfaceForm.equalsIgnoreCase("●") || surfaceForm.equalsIgnoreCase("/") || surfaceForm.equalsIgnoreCase("-") || surfaceForm.equalsIgnoreCase("+") || surfaceForm.equalsIgnoreCase("-LRB-") || surfaceForm.equalsIgnoreCase("-RRB-") || surfaceForm.equalsIgnoreCase("-LCB-") || surfaceForm.equalsIgnoreCase("-RCB-") || surfaceForm.equalsIgnoreCase("-LSB-") || surfaceForm.equalsIgnoreCase("-RSB-"));
     }
     
     public static boolean isEnglishStopWord(String surfaceForm){
@@ -283,7 +283,7 @@ public class Word implements Serializable {
             if (time > 1900 && time < 2200) {
                 return true;
             }
-        } catch (NumberFormatException nfe) {
+        } catch (NumberFormatException ignored) {
         }
         return false;
     }
@@ -310,7 +310,7 @@ public class Word implements Serializable {
      * @return Word type {@link ArrayList}.
      */
     public ArrayList<Word> toCharacters() {
-        ArrayList<Word> characters = new ArrayList<Word>();
+        ArrayList<Word> characters = new ArrayList<>();
         for (int i = 0; i < name.length(); i++)
             characters.add(new Word("" + name.charAt(i)));
         return characters;

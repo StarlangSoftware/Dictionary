@@ -3,7 +3,7 @@ package Dictionary;
 import Math.Vector;
 
 public class VectorizedWord extends Word {
-    private Vector vector;
+    private final Vector vector;
 
     /**
      * A constructor of {@link VectorizedWord} class which takes a String and a {@link Vector} as inputs and calls its

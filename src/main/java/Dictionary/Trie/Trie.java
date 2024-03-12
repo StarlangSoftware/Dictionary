@@ -6,7 +6,7 @@ import Dictionary.Word;
 import java.util.HashSet;
 
 public class Trie {
-    private TrieNode rootNode;
+    private final TrieNode rootNode;
 
     /**
      * A constructor of {@link Trie} class which creates a new {@link TrieNode} as rootNode.

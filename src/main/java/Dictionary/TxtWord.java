@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public class TxtWord extends Word {
 
-    private ArrayList<String> flags;
+    private final ArrayList<String> flags;
     private String morphology;
 
     /**
@@ -16,7 +16,7 @@ public class TxtWord extends Word {
      */
     public TxtWord(String name) {
         super(name);
-        flags = new ArrayList<String>();
+        flags = new ArrayList<>();
     }
 
     /**
@@ -28,7 +28,7 @@ public class TxtWord extends Word {
      */
     public TxtWord(String name, String flag) {
         super(name);
-        flags = new ArrayList<String>();
+        flags = new ArrayList<>();
         addFlag(flag);
     }
 
@@ -150,7 +150,7 @@ public class TxtWord extends Word {
         }
         if (flags.contains("F2P1")) {
             /*
-             *F2P1: The bare-form is a verb and depending on this attribute, the verb can can not PassiveHn suffix, can take CausativeHr suffix,
+             *F2P1: The bare-form is a verb and depending on this attribute, the verb can not PassiveHn suffix, can take CausativeHr suffix,
              *can take CausativeDHr suffix, can take ReciprocalHs suffix. e.g. Bit, doy, düş
              */
             return "F2P1";
@@ -271,10 +271,7 @@ public class TxtWord extends Word {
         if (isPronoun() && word.isPronoun()) {
             return true;
         }
-        if (isAdverb() && word.isAdverb()) {
-            return true;
-        }
-        return false;
+        return isAdverb() && word.isAdverb();
     }
 
     /**

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class TrieNode {
-    private HashMap<Character, TrieNode> children = null;
+    private final HashMap<Character, TrieNode> children;
     private HashSet<Word> words = null;
 
     /**

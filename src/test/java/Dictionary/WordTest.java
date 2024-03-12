@@ -48,7 +48,7 @@ public class WordTest {
         assertTrue(Word.isPunctuation("..."));
         assertTrue(Word.isPunctuation("["));
         assertTrue(Word.isPunctuation("]"));
-        assertTrue(Word.isPunctuation("\u2026"));
+        assertTrue(Word.isPunctuation("…"));
         assertTrue(Word.isPunctuation("%"));
         assertTrue(Word.isPunctuation("&"));
         assertTrue(Word.isPunctuation("="));

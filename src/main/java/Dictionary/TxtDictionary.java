@@ -5,12 +5,14 @@ import Util.FileUtils;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
 
 public class TxtDictionary extends Dictionary {
-    private HashMap<String, String> misspelledWords = new HashMap<>();
+    private final HashMap<String, String> misspelledWords = new HashMap<>();
 
     /**
      * A constructor of {@link TxtDictionary} class which takes a {@link WordComparator} as an input and calls its super
@@ -229,7 +231,6 @@ public class TxtDictionary extends Dictionary {
                 } else {
                     if (word1.compareToIgnoreCase(word2) > 0) {
                         outfile.write(st2 + "\n");
-                        st2 = secondfile.readLine();
                     } else {
                         flag = st2.split(" ")[1];
                         if (st1.contains(flag)) {
@@ -238,8 +239,8 @@ public class TxtDictionary extends Dictionary {
                             outfile.write(st1 + " " + flag + "\n");
                         }
                         st1 = firstfile.readLine();
-                        st2 = secondfile.readLine();
                     }
+                    st2 = secondfile.readLine();
                 }
             }
             while (st1 != null) {
@@ -284,10 +285,9 @@ public class TxtDictionary extends Dictionary {
                 }
                 line = br.readLine();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
-        Collections.sort(words, comparator);
+        words.sort(comparator);
     }
 
     /**
@@ -297,7 +297,6 @@ public class TxtDictionary extends Dictionary {
      * @param fileInputStream File stream input.
      */
     private void loadMisspelledWords(InputStream fileInputStream) {
-        int i;
         String line;
         String[] list;
         try {
@@ -310,13 +309,11 @@ public class TxtDictionary extends Dictionary {
                 }
                 line = br.readLine();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
     }
 
     private void loadMorphologicalLexicon(InputStream fileInputStream) {
-        int i;
         String line;
         String[] list;
         try {
@@ -332,8 +329,7 @@ public class TxtDictionary extends Dictionary {
                 }
                 line = br.readLine();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
     }
 
@@ -358,7 +354,7 @@ public class TxtDictionary extends Dictionary {
         BufferedWriter outfile;
         int i;
         try {
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(filename), StandardCharsets.UTF_8);
+            OutputStreamWriter writer = new OutputStreamWriter(Files.newOutputStream(Paths.get(filename)), StandardCharsets.UTF_8);
             outfile = new BufferedWriter(writer);
             for (i = 0; i < words.size(); i++) {
                 outfile.write(words.get(i).toString() + "\n");
@@ -389,7 +385,7 @@ public class TxtDictionary extends Dictionary {
             case 'p':
                 trie.addWord(root + 'b', word);
                 break;
-            case '\u00e7': //ç
+            case 'ç': //ç
                 trie.addWord(root + 'c', word);
                 break;
             case 't':
@@ -397,7 +393,7 @@ public class TxtDictionary extends Dictionary {
                 break;
             case 'k':
             case 'g':
-                trie.addWord(root + '\u011f', word); //ğ
+                trie.addWord(root + 'ğ', word); //ğ
                 break;
         }
     }
@@ -490,8 +486,6 @@ public class TxtDictionary extends Dictionary {
             if (word.vowelEChangesToIDuringYSuffixation() || word.vowelAChangesToIDuringYSuffixation()) {
                 switch (last) {
                     case 'e':
-                        result.addWord(rootWithoutLast, word);
-                        break;
                     case 'a':
                         result.addWord(rootWithoutLast, word);
                         break;
