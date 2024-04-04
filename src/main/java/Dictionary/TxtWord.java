@@ -81,7 +81,7 @@ public class TxtWord extends Word {
         if (flags.contains("F2P1-NO-REF")) {
             /*
              F2P1-NO-REF: The bare-form is a verb and depending on this attribute, the verb can not take PassiveHn suffix, can take PassiveHl suffix,
-             can take CausativeT suffix. e.g. Doğ, göç, için
+             can take CausativeT suffix. e.g. Doğ, göç, iç
              */
             return "F2P1-NO-REF";
         }
