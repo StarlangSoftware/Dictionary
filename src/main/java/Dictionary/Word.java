@@ -170,6 +170,11 @@ public class Word implements Serializable {
         return TurkishLanguage.UPPERCASE_LETTERS.indexOf(surfaceForm.charAt(0)) != -1;
     }
 
+    /**
+     * Converts the given string into its capital form
+     * @param surfaceForm Given string which will be converted to its capital form
+     * @return Capital form of the input string.
+     */
     public static String toCapital(String surfaceForm){
         return surfaceForm.substring(0, 1).toUpperCase(new Locale("tr")) + surfaceForm.substring(1);
     }
@@ -188,7 +193,12 @@ public class Word implements Serializable {
     public static boolean isPunctuation(String surfaceForm) {
         return (surfaceForm.equalsIgnoreCase(".") || surfaceForm.equalsIgnoreCase("...") || surfaceForm.equalsIgnoreCase("[") || surfaceForm.equalsIgnoreCase("]") || surfaceForm.equalsIgnoreCase("%") || surfaceForm.equalsIgnoreCase("&") || surfaceForm.equalsIgnoreCase("=") || surfaceForm.equalsIgnoreCase("``") || surfaceForm.equalsIgnoreCase("`") || surfaceForm.equalsIgnoreCase("''") || surfaceForm.equalsIgnoreCase("$") || surfaceForm.equalsIgnoreCase("!") || surfaceForm.equalsIgnoreCase("?") || surfaceForm.equalsIgnoreCase(",") || surfaceForm.equalsIgnoreCase(":") || surfaceForm.equalsIgnoreCase("--") || surfaceForm.equalsIgnoreCase(";") || surfaceForm.equalsIgnoreCase("(") || surfaceForm.equalsIgnoreCase(")") || surfaceForm.equalsIgnoreCase("'") || surfaceForm.equalsIgnoreCase("\"") || surfaceForm.equalsIgnoreCase("“") || surfaceForm.equalsIgnoreCase("‘") || surfaceForm.equalsIgnoreCase("”") || surfaceForm.equalsIgnoreCase("…") || surfaceForm.equalsIgnoreCase("●") || surfaceForm.equalsIgnoreCase("/") || surfaceForm.equalsIgnoreCase("-") || surfaceForm.equalsIgnoreCase("+") || surfaceForm.equalsIgnoreCase("-LRB-") || surfaceForm.equalsIgnoreCase("-RRB-") || surfaceForm.equalsIgnoreCase("-LCB-") || surfaceForm.equalsIgnoreCase("-RCB-") || surfaceForm.equalsIgnoreCase("-LSB-") || surfaceForm.equalsIgnoreCase("-RSB-"));
     }
-    
+
+    /**
+     * Checks if the given input string is an English stop word or not.
+     * @param surfaceForm Given string
+     * @return True, if the input string is an English stop word, false otherwise.
+     */
     public static boolean isEnglishStopWord(String surfaceForm){
         return surfaceForm.equalsIgnoreCase("at") || surfaceForm.equalsIgnoreCase("the")
                 || surfaceForm.equalsIgnoreCase("to") || surfaceForm.equalsIgnoreCase("a") || surfaceForm.equalsIgnoreCase("an")

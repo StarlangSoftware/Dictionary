@@ -21,6 +21,13 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
         super(comparator);
     }
 
+    /**
+     * Another constructor of {@link VectorizedDictionary} class that takes a WordComparator and an input file
+     * containing the word vectors as input. Line j contains an array of numbers that represent the word vector for
+     * that corresponding word at index j.
+     * @param fileName Name of the input file that contains the word vectors
+     * @param comparator WordComparator input.
+     */
     public VectorizedDictionary(String fileName, WordComparator comparator){
         super(comparator);
         try{
@@ -55,6 +62,10 @@ public class VectorizedDictionary extends Dictionary implements Serializable {
         words.sort(comparator);
     }
 
+    /**
+     * Saves the word vectors in the output file.
+     * @param fileName Output file name.
+     */
     public void saveAsText(String fileName){
         BufferedWriter outfile;
         int i;
