@@ -64,10 +64,18 @@ public class TxtWord extends Word {
         flags.remove(flag);
     }
 
+    /**
+     * Mutator for the inner morphology of the word.
+     * @param morphology New inner morphology of the word.
+     */
     public void setMorphology(String morphology){
         this.morphology = morphology;
     }
 
+    /**
+     * Accessor for the inner morphology of the word.
+     * @return Inner morphology of the word.
+     */
     public String getMorphology(){
         return morphology;
     }
