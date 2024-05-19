@@ -173,7 +173,7 @@ public class Word implements Serializable {
     /**
      * Converts the given string into its capital form
      * @param surfaceForm Given string which will be converted to its capital form
-     * @return Capital form of the input string.
+     * @return Capitalized form of the input string.
      */
     public static String toCapital(String surfaceForm){
         return surfaceForm.substring(0, 1).toUpperCase(new Locale("tr")) + surfaceForm.substring(1);
