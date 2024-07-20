@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Locale;
 
 public class TxtDictionary extends Dictionary {
-    private final HashMap<String, String> misspelledWords = new HashMap<>();
+    private HashMap<String, String> misspelledWords = new HashMap<>();
 
     /**
      * A constructor of {@link TxtDictionary} class which takes a {@link WordComparator} as an input and calls its super
@@ -35,7 +35,7 @@ public class TxtDictionary extends Dictionary {
         File file = new File(classLoader.getResource("turkish_dictionary.txt").getFile());
         this.fileName = file.getName();
         loadFromText(FileUtils.getInputStream("turkish_dictionary.txt"));
-        loadMisspelledWords(FileUtils.getInputStream("turkish_misspellings.txt"));
+        loadMisspelledWords("turkish_misspellings.txt");
         loadMorphologicalLexicon(FileUtils.getInputStream("turkish_morphological_lexicon.txt"));
     }
 
@@ -67,7 +67,7 @@ public class TxtDictionary extends Dictionary {
         super(comparator);
         this.fileName = fileName;
         loadFromText(FileUtils.getInputStream(fileName));
-        loadMisspelledWords(FileUtils.getInputStream(misspelledFileName));
+        loadMisspelledWords(misspelledFileName);
     }
 
     /**
@@ -299,23 +299,10 @@ public class TxtDictionary extends Dictionary {
      * The loadMisspellWords method takes a String filename as an input. It reads given file line by line and splits
      * according to space and assigns each word with its misspelled form to the the misspelledWords hashMap.
      *
-     * @param fileInputStream File stream input.
+     * @param fileName File input.
      */
-    private void loadMisspelledWords(InputStream fileInputStream) {
-        String line;
-        String[] list;
-        try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
-            line = br.readLine();
-            while (line != null) {
-                list = line.split(" ");
-                if (list.length == 2) {
-                    misspelledWords.put(list[0], list[1]);
-                }
-                line = br.readLine();
-            }
-        } catch (IOException ignored) {
-        }
+    private void loadMisspelledWords(String fileName) {
+        misspelledWords = FileUtils.readHashMap(fileName);
     }
 
     /**
