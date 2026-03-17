@@ -40,7 +40,7 @@ Video Lectures
 For Developers
 ============
 
-You can also see [Python](https://github.com/starlangsoftware/Dictionary-Py), [Cython](https://github.com/starlangsoftware/Dictionary-Cy), [C++](https://github.com/starlangsoftware/Dictionary-CPP), [Swift](https://github.com/starlangsoftware/Dictionary-Swift), [C](https://github.com/starlangsoftware/Dictionary-C), [Js](https://github.com/starlangsoftware/Dictionary-Js), or [C#](https://github.com/starlangsoftware/Dictionary-CS) repository.
+You can also see [Python](https://github.com/starlangsoftware/Dictionary-Py), [Cython](https://github.com/starlangsoftware/Dictionary-Cy), [C++](https://github.com/starlangsoftware/Dictionary-CPP), [Swift](https://github.com/starlangsoftware/Dictionary-Swift), [C](https://github.com/starlangsoftware/Dictionary-C), [Js](https://github.com/starlangsoftware/Dictionary-Js), [Php](https://github.com/starlangsoftware/Dictionary-Php), or [C#](https://github.com/starlangsoftware/Dictionary-CS) repository.
 
 ## Requirements
 
