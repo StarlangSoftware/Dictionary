@@ -36,10 +36,6 @@ Video Lectures
 
 [<img src=video1.jpg width="50%">](https://youtu.be/10iAqbfsA2A)[<img src=video2.jpg width="50%">](https://youtu.be/C-_TZDkFwzQ)
 
-Class Diagram
-============
-
-<img src="classDiagram.png">
 
 For Developers
 ============
@@ -196,6 +192,10 @@ To syllabify the word, SyllableList class is used.
 
 For Contibutors
 ============
+
+### Class Diagram
+
+<img src="classDiagram.png">
 
 ### pom.xml file
 1. Standard setup for packaging is similar to:
