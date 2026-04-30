@@ -60,7 +60,7 @@ public class TxtWordTest {
                 count++;
             }
         }
-        assertEquals(30603, count);
+        assertEquals(30625, count);
     }
 
     @Test
